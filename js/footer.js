@@ -3,9 +3,9 @@ class footerTest extends HTMLElement {
     const shadowRoot = this.attachShadow({ mode: 'open' });
     shadowRoot.innerHTML = `
       <style>
-        .slider-container {
-          width: 600px; 
-          height: 540px; 
+        .desplazamiento {
+          width: 100%; 
+          height: 50%; 
           margin: 50px auto;
           overflow: hidden;
           background-color: #000; 
@@ -36,26 +36,26 @@ class footerTest extends HTMLElement {
           text-shadow: 1px 1px 2px #000; 
         }
       </style>
-      <div class="slider-container">
+      <div class="desplazamiento">
         <div class="slide">
           <img src="img/steven.jpg" alt="Testimonio 1">
           <h1>Steven Floril</h1>
-          <p>"Programación Integrativa de Componentes Web</p>
+          <p> "Programación Integrativa de Componentes Web"</p>
         </div>
         <div class="slide">
           <img src="img/brithney.png" alt="Testimonio 2">
           <h1>Brithney Salazar</h1>
-          <p>"Programación Integrativa de Componentes Web</p>
+          <p> "Programación Integrativa de Componentes Web"</p>
         </div>
         <div class="slide">
           <img src="img/kiara.jpg" alt="Testimonio 3">
           <h1>Kiara Carvajal</h1>
-          <p>"Programación Integrativa de Componentes Web</p>
+          <p> "Programación Integrativa de Componentes Web"</p>
         </div>
         <div class="slide">
           <img src="img/mishell.jpg" alt="Testimonio 4">
           <h1>Mishell Castellano</h1>
-          <p>"Programación Integrativa de Componentes Web</p>
+          <p> "Programación Integrativa de Componentes Web"</p>
         </div>
       </div>
     `;
@@ -81,12 +81,12 @@ class footerTest extends HTMLElement {
 
     function updateSlidePositions() {
       slides.forEach((slide, index) => {
-        const translateX = (index - currentSlide) * 100; 
+        const translateX = (index - currentSlide) * 500; 
         slide.style.transform = `translateX(${translateX}%)`;
       });
     }
 
-    setInterval(nextSlide, 3000); 
+    setInterval(nextSlide, 2000); 
   }
 }
 
