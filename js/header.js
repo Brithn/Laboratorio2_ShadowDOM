@@ -3,7 +3,9 @@ document.addEventListener('DOMContentLoaded', () => {
         constructor() {
             super();
             const shadow = this.attachShadow({ mode: 'open' });
+            
         }
+
     }
-    
+    customElements.define('header-element', HeaderElement);
 })
