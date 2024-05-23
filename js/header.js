@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             </style>
             <header>
-                <div class="logo">PhotoFolio</div>
+                <div class="logo">Estudio Fotográfico</div>
                 <nav>
                     <a href="#">Home</a>
                     <a href="#">About</a>
