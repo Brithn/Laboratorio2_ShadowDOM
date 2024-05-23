@@ -20,6 +20,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     color: #fff;
                     text-decoration: none;
                     margin-left: 15px;
+                    font-size: 1.3em; 
+                    
                 }
             </style>
             <header>
