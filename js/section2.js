@@ -7,7 +7,7 @@ class SeccionGaleria extends HTMLElement {
         <style>
         .galeria {
             overflow-x: scroll;
-            padding: 10%;
+            padding: 5%;
             scrollbar-width: none; 
             padding-top:.65rem;
             object-fit: cover;
