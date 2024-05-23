@@ -8,9 +8,9 @@ class SeccionGaleria extends HTMLElement {
         .galeria {
             // display: flex;
             overflow-x: scroll;
-            padding: 20px;
-            scrollbar-width: none; 
             padding: 10px;
+            scrollbar-width: none; 
+            padding-top:.75rem;
         }
         .galeria::-webkit-scrollbar {
             display: none; /* For Chrome, Safari, and Opera */
@@ -30,11 +30,13 @@ class SeccionGaleria extends HTMLElement {
                 <img src="https://img.freepik.com/fotos-premium/otono-es-epoca-magica-ano-que-naturaleza-viste-sus-atuendos-mas-brillantes-hojas-amarillas-rojas-aire-fresco-calido-sol-crean-atmosfera-insuperable-belleza-melancolica_887181-7139.jpg" alt="galeria Image 4">
                 <img src="https://img.freepik.com/fotos-premium/papel-pared-ambled-negro-4k-macro-minimalista-naturaleza-3d_1029679-14806.jpg?size=626&ext=jpg&ga=GA1.1.1908636980.1712966400&semt=ais" alt="galeria Image 5">
                 <img src="https://img.freepik.com/foto-gratis/pintura-lago-montana-montana-al-fondo_188544-9126.jpg" alt="galeria Image 6">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmKCpmQo0lxq4iXUnaC3-Q0MGmc54082jP447M6ddfkShwmANS57yYoiJ2E5nw1ltHqbQ&usqp=CAU" alt="galeria Image 3">
-                <img src="https://img.freepik.com/foto-gratis/fantastica-puesta-sol-sobre-lago-cielo-espectacular-mundo-belleza_587448-8136.jpg" alt="galeria Image 4">
-                <img src="https://us.123rf.com/450wm/xanthius/xanthius2306/xanthius230605027/206102400-una-puesta-de-sol-sobre-un-cuerpo-de-agua.jpg?ver=6" alt="galeria Image 5">
-                <img src="https://us.123rf.com/450wm/valio84sl/valio84sl2107/valio84sl210700226/172410337-hermoso-paisaje-nublado-sobre-el-mar-tiro-al-amanecer.jpg?ver=6" alt="galeria Image 6">
-                
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmKCpmQo0lxq4iXUnaC3-Q0MGmc54082jP447M6ddfkShwmANS57yYoiJ2E5nw1ltHqbQ&usqp=CAU" alt="galeria Image 7">
+                <img src="https://img.freepik.com/foto-gratis/fantastica-puesta-sol-sobre-lago-cielo-espectacular-mundo-belleza_587448-8136.jpg" alt="galeria Image 8">
+                <img src="https://us.123rf.com/450wm/xanthius/xanthius2306/xanthius230605027/206102400-una-puesta-de-sol-sobre-un-cuerpo-de-agua.jpg?ver=6" alt="galeria Image 9">
+                <img src="https://us.123rf.com/450wm/valio84sl/valio84sl2107/valio84sl210700226/172410337-hermoso-paisaje-nublado-sobre-el-mar-tiro-al-amanecer.jpg?ver=6" alt="galeria Image 10">
+                <img src="https://us.123rf.com/450wm/xanthius/xanthius2306/xanthius230605027/206102400-una-puesta-de-sol-sobre-un-cuerpo-de-agua.jpg?ver=6" alt="galeria Image 9">
+                <img src="https://us.123rf.com/450wm/valio84sl/valio84sl2107/valio84sl210700226/172410337-hermoso-paisaje-nublado-sobre-el-mar-tiro-al-amanecer.jpg?ver=6" alt="galeria Image 10">
+                   
             </div>
         `;
     }
