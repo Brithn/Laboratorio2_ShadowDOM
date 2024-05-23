@@ -6,9 +6,8 @@ class SeccionGaleria extends HTMLElement {
         shadow.innerHTML = `
         <style>
         .galeria {
-            // display: flex;
             overflow-x: scroll;
-            padding: 10px;
+            padding: 10%;
             scrollbar-width: none; 
             padding-top:.65rem;
             object-fit: cover;
