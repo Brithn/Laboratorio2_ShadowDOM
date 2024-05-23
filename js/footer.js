@@ -1,4 +1,4 @@
-class TestimonialsSlider extends HTMLElement {
+class footerTest extends HTMLElement {
   connectedCallback() {
     const shadowRoot = this.attachShadow({ mode: 'open' });
     shadowRoot.innerHTML = `
@@ -90,4 +90,4 @@ class TestimonialsSlider extends HTMLElement {
   }
 }
 
-customElements.define('testimonials-slider', TestimonialsSlider);
+customElements.define('footer-test', footerTest);
