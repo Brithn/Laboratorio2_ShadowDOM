@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     justify-content: space-between;
                     align-items: center;
                     padding: 10px 20px;
-                    background-color: #333;
+                    background-color: #000000;
                 }
                 .logo {
                     font-size: 1.5em;
