@@ -10,10 +10,9 @@ class SeccionGaleria extends HTMLElement {
             overflow-x: scroll;
             padding: 10px;
             scrollbar-width: none; 
-            padding-top:.75rem;
-        }
-        .galeria::-webkit-scrollbar {
-            display: none; /* For Chrome, Safari, and Opera */
+            padding-top:.65rem;
+            object-fit: cover;
+            padding-right: .75rem;
         }
         .galeria img {
             width: 200px;
