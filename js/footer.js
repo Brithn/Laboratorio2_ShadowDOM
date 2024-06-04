@@ -1,3 +1,4 @@
+
 class footerTest extends HTMLElement {
   connectedCallback() {
     const shadowRoot = this.attachShadow({ mode: 'open' });
@@ -62,7 +63,6 @@ class footerTest extends HTMLElement {
 
     const slides = shadowRoot.querySelectorAll('.slide');
     let currentSlide = 0;
-
     function nextSlide() {
       currentSlide++;
       if (currentSlide >= slides.length) {
@@ -70,7 +70,6 @@ class footerTest extends HTMLElement {
       }
       updateSlidePositions();
     }
-
     function prevSlide() {
       currentSlide--;
       if (currentSlide < 0) {
@@ -78,16 +77,13 @@ class footerTest extends HTMLElement {
       }
       updateSlidePositions();
     }
-
-    function updateSlidePositions() {
+  function updateSlidePositions() {
       slides.forEach((slide, index) => {
         const translateX = (index - currentSlide) * 500; 
         slide.style.transform = `translateX(${translateX}%)`;
       });
     }
-
     setInterval(nextSlide, 2000); 
   }
 }
-
 customElements.define('footer-test', footerTest);

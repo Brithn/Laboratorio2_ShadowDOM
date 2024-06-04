@@ -1,3 +1,4 @@
+
 class ElementoTitulo extends HTMLElement {
     constructor() {
         super();
@@ -35,7 +36,11 @@ class ElementoTitulo extends HTMLElement {
                 <h1><span style="color: #00b894;">Capturando Momentos</h1>
                 <container>
                 <row>
-                <p>Somos apasionados de la fotografía y estamos dedicados a capturar tus momentos más preciados con arte y profesionalismo. Navega por nuestra galería para ver nuestras obras y descubre cómo podemos transformar tus instantes especiales en recuerdos eternos. </p>
+                <p>Somos apasionados de la fotografía y estamos dedicados 
+                a capturar tus momentos más preciados con arte y profesionalismo.
+                 Navega por nuestra galería para ver nuestras obras y descubre
+                  cómo podemos transformar tus instantes especiales en recuerdos
+                   eternos. </p>
                 <button>GALERIA</button>
                 </row>
                 </container>
@@ -44,3 +49,4 @@ class ElementoTitulo extends HTMLElement {
         }
     }
 customElements.define('elemento-titulo',ElementoTitulo);
+

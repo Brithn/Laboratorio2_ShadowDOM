@@ -39,5 +39,4 @@ class SeccionGaleria extends HTMLElement {
         `;
     }
 }
-
 customElements.define('seccion-galeria', SeccionGaleria);
