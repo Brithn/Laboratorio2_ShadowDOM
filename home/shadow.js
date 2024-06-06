@@ -82,6 +82,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                     .logo i {
                         margin-right: 10px;
+                        color: green;
+                    }
+                    .cam{
+                        color: green;
                     }
                     nav a {
                         color: #fff;
