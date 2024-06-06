@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../home/shadow.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap">
+    <script src="../services/script.js"></script>
+    <script src="../services/shadowDOM.js"></script>
+</head>
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background-color: #373636;
+        color: #fff;
+    }
+</style>
+<body>
+    <header-element 
+    logo-text="Estudio Fotográfico" 
+    background-color="#333333" 
+    link1-text="Home" 
+    link1-href="/" 
+    link2-text="About" 
+    link2-href="/about">
+   </header-element>
+
+    <div class="container">
+        <div class="custom-box">
+            <h1 class="custom-title">Servicios</h1>
+            <p class="custom-paragraph" id="animated-text">Nuestro estudio fotográfico lleva más de 20 años ofreciendo los mejores servicios de fotografía, ofreciendo distintos planes y servicio de fotógrafos alrededor del mundo.</p>
+            <a href="contact.html" class="cta-btn">Contratanos<br></a>
+        </div>
+    </div>
+    <my-card title="Gigantografia" description="Esta es una breve descripción de la tarjeta." image="https://via.placeholder.com/150"></my-card>
+    <my-card title="Fotos Carnet" description="Otra descripción breve para la segunda tarjeta." image="https://via.placeholder.com/150"></my-card>
+
+</body>
+</html>
