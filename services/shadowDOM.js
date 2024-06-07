@@ -30,7 +30,6 @@ class MyCard extends HTMLElement {
             <h2>${title}</h2>
             <p>${description}</p>
             <img src="${image}" alt="Card Image">
-            <a href="#" class="buy-btn">Comprar</a>
         </div>
         `;
     }
@@ -72,23 +71,6 @@ class MyCard extends HTMLElement {
                 object-fit: cover;
                 border-radius: 5px;
                 transition: transform 0.3s ease;
-            }
-            .buy-btn {
-                font-family: 'Poppins', sans-serif;
-                text-decoration: none;
-                color: #fff;
-                background-color: #207319;
-                padding: 10px 20px;
-                border: 2px solid #207319;
-                border-radius: 5px;
-                transition: all 0.3s ease;
-                display: inline-block;
-                margin-top: 20px;
-            }
-            .buy-btn:hover {
-                background-color: #185a14;
-                border-color: #185a14;
-                transform: scale(1.1);
             }
             .card:hover {
                 transform: scale(1.05);

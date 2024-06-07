@@ -4,3 +4,7 @@ document.addEventListener("DOMContentLoaded", function() {
         paragraph.style.opacity = 1;
     }, 500); // Espera 500 ms antes de iniciar la animación
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    AOS.init();
+});
