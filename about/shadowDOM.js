@@ -1,84 +1,76 @@
-
-  class Breadcrumbs extends HTMLElement {
+class BreadcrumbNav extends HTMLElement {
     constructor() {
-        super();
-        this.shadowDOM = this.attachShadow({ mode: 'open' });
+      super();
+      this.shadowDOM = this.attachShadow({ mode: 'open' });
     }
 
     connectedCallback() {
-        this.mapComponentAttributes();
-        this.render();
+      this.mapComponentAttributes();
+      this.render();
     }
 
     mapComponentAttributes() {
-        const attributeMapping = [
-            'separator',
-        ];
-        
-        attributeMapping.forEach(key => {
-            if (!this.attributes[key]) {
-                this.attributes[key] = { value: '/' }; // Default separator
-            }
-        });
+      const attributeMapping = ['separator'];
+      attributeMapping.forEach(key => {
+        if (!this.attributes[key]) {
+          this.setAttribute(key, '/');
+        }
+      });
     }
 
     render() {
-        this.shadowDOM.innerHTML = `
-            ${this.templateCss()}
-            ${this.template()}
-        `;
+      this.shadowDOM.innerHTML = `
+        ${this.templateCss()}
+        ${this.template()}
+      `;
     }
 
     template() {
-        const items = Array.from(this.querySelectorAll('li')).map((item, index, arr) => {
-            const separator = index < arr.length - 1 ? this.attributes.separator.value : '';
-            return `<li>${item.innerHTML}${separator}</li>`;
-        }).join('');
+      const items = Array.from(this.querySelectorAll('li')).map(item => {
+        return `<li class="breadcrumb-item">${item.innerHTML}</li>`;
+      }).join('');
 
-        return `
-            <nav class="breadcrumbs">
-                <div class="container">
-                    <ol>
-                        ${items}
-                    </ol>
-                </div>
-            </nav>
-        `;
+      return `
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            ${items}
+          </ol>
+        </nav>
+      `;
     }
 
     templateCss() {
-        return `
-            <style>
-                .breadcrumbs {
-                    padding: 10px 0;
-                    background-color: #f5f5f5;
-                }
-                .breadcrumbs .container {
-                    display: flex;
-                }
-                .breadcrumbs ol {
-                    list-style: none;
-                    display: flex;
-                    padding: 0;
-                    margin: 0;
-                }
-                .breadcrumbs li {
-                    margin-right: 10px;
-                }
-                .breadcrumbs li::after {
-                    content: '';
-                }
-                .breadcrumbs li a {
-                    text-decoration: none;
-                    color: #007bff;
-                }
-                .breadcrumbs .current {
-                    font-weight: bold;
-                }
-            </style>
-        `;
+      const separator = this.getAttribute('separator');
+      return `
+        <style>
+          .breadcrumb-nav {
+            display: block;
+            font-family: Arial, sans-serif;
+          }
+          .breadcrumb {
+            list-style: none;
+            padding: 0;
+            display: flex;
+          }
+          .breadcrumb-item {
+            margin-right: 5px;
+          }
+          .breadcrumb-item + .breadcrumb-item::before {
+            content: "${separator}";
+            margin-right: 5px;
+          }
+          .breadcrumb-item a {
+            text-decoration: none;
+            color: blue;
+          }
+          .breadcrumb-item.active a {
+            color: black;
+            pointer-events: none;
+            cursor: default;
+          }
+        </style>
+      `;
     }
-}
+  }
 
-window.customElements.define('breadcrumbs-nav', Breadcrumbs);
-
+  window.customElements.define('breadcrumb-nav', BreadcrumbNav);
