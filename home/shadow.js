@@ -20,6 +20,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 'link2-href',
                 'link3-text',
                 'link3-href',
+                'link4-text',
+                'link4-href',
                 'icon1-class',
                 'icon1-href',
                 'icon2-class',
@@ -54,6 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         <a href="${this.getAttribute('link1-href')}">${this.getAttribute('link1-text')}</a>
                         <a href="${this.getAttribute('link2-href')}">${this.getAttribute('link2-text')}</a>
                         <a href="${this.getAttribute('link3-href')}">${this.getAttribute('link3-text')}</a>
+                        <a href="${this.getAttribute('link4-href')}">${this.getAttribute('link4-text')}</a>
                     </nav>
                     <div class="social-icons">
                         <a href="${this.getAttribute('icon1-href')}"><i class="${this.getAttribute('icon1-class')}"></i></a>
