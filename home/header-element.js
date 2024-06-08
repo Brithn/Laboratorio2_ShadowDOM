@@ -1,3 +1,5 @@
+//Shadow DOM element
+
 document.addEventListener('DOMContentLoaded', () => {
     class HeaderElement extends HTMLElement {
         constructor() {
@@ -49,21 +51,21 @@ document.addEventListener('DOMContentLoaded', () => {
         template() {
             return `
                 <header>
-                    <div class="logo">
-                        <i class="fas fa-camera"></i> ${this.getAttribute('logo-text')}
-                    </div>
-                    <nav>
+                        <div class="logo">
+                            <i class="fas fa-camera"></i> ${this.getAttribute('logo-text')}
+                        </div>
+                        <nav>
                         <a href="${this.getAttribute('link1-href')}">${this.getAttribute('link1-text')}</a>
                         <a href="${this.getAttribute('link2-href')}">${this.getAttribute('link2-text')}</a>
                         <a href="${this.getAttribute('link3-href')}">${this.getAttribute('link3-text')}</a>
                         <a href="${this.getAttribute('link4-href')}">${this.getAttribute('link4-text')}</a>
-                    </nav>
-                    <div class="social-icons">
-                        <a href="${this.getAttribute('icon1-href')}"><i class="${this.getAttribute('icon1-class')}"></i></a>
-                        <a href="${this.getAttribute('icon2-href')}"><i class="${this.getAttribute('icon2-class')}"></i></a>
-                        <a href="${this.getAttribute('icon3-href')}"><i class="${this.getAttribute('icon3-class')}"></i></a>
-                        <a href="${this.getAttribute('icon4-href')}"><i class="${this.getAttribute('icon4-class')}"></i></a>
-                    </div>
+                        </nav>
+                        <div class="social-icons">
+                            <a href="${this.getAttribute('icon1-href')}"><i class="${this.getAttribute('icon1-class')}"></i></a>
+                            <a href="${this.getAttribute('icon2-href')}"><i class="${this.getAttribute('icon2-class')}"></i></a>
+                            <a href="${this.getAttribute('icon3-href')}"><i class="${this.getAttribute('icon3-class')}"></i></a>
+                            <a href="${this.getAttribute('icon4-href')}"><i class="${this.getAttribute('icon4-class')}"></i></a>
+                        </div>
                 </header>
             `;
         }
@@ -96,11 +98,16 @@ document.addEventListener('DOMContentLoaded', () => {
                         margin-left: 15px;
                         font-size: 1.3em; 
                     }
+                    nav a:hover {
+                        color: #28a745;
+                    }
                     .social-icons a {
+                        margin: 0 10px;
                         color: #fff;
-                        text-decoration: none;
-                        margin-left: 15px;
-                        font-size: 1.3em;
+                        font-size: 1.5rem;
+                    }
+                    .social-icons a:hover {
+                        color: #28a745;
                     }
                 </style>
             `;
