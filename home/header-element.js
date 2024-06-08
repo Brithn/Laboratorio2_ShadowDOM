@@ -90,7 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                     .logo i {
                         margin-right: 10px;
-                        color: green;
+                        color: #27a776;
                     }
                     nav a {
                         color: #fff;
@@ -99,7 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         font-size: 1.3em; 
                     }
                     nav a:hover {
-                        color: #28a745;
+                        color: #27a776;
                     }
                     .social-icons a {
                         margin: 0 10px;
@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         font-size: 1.5rem;
                     }
                     .social-icons a:hover {
-                        color: #28a745;
+                        color: #27a776;
                     }
                 </style>
             `;

@@ -37,6 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
         template() {
             return `
                 <div class="presentation">
+                    <br>
                     <h1 class= "underlight">${this.getAttribute('heading-text')}</h1>
                     <h2>${this.getAttribute('subheading-text')}</h2>
                     <p>${this.getAttribute('description-text')}</p>
@@ -68,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         padding: 0.5px;
                         bottom: 0;
                         height: 4px;
-                        background-color: green;
+                        background-color: #27a776;
                         transform: scalex(0);
                         transform-origin: bottom right;
                         transition: transform 0.6s ease-out;
@@ -91,7 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     .cta-button {
                         display: inline-block;
                         padding: 10px 20px;
-                        background-color: #28a745;
+                        background-color: #27a776;
                         color: #fff;
                         text-decoration: none;
                         font-size: 1.2em;

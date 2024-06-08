@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         font-size: 1.5rem;
                     }
                     .footer .social-icons a:hover {
-                        color: #28a745;
+                        color: #27a776;
                     }
                 </style>
                 <footer class="footer">
