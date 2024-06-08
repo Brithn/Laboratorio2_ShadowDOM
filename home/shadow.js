@@ -90,9 +90,6 @@ document.addEventListener('DOMContentLoaded', () => {
                         margin-right: 10px;
                         color: green;
                     }
-                    .cam{
-                        color: green;
-                    }
                     nav a {
                         color: #fff;
                         text-decoration: none;
