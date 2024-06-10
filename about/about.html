@@ -4,83 +4,155 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About</title>
+    <title>Sobre Nosotros</title>
+
 
     <script src="customElements.js"></script>
     <script src="shadowDOM.js" defer></script>
-    <script src="template.js"></script>
-    <script src="ESModules.js"></script>
+    <link rel="stylesheet" href="style.css">
+
+
     <script src="../home/header-element.js"></script>
     <script src="../home/presentacion-element.js"></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../home/footer.js"></script>
+
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="../css/style.css">
-    <script src="../home/footer.js"></script>
 
     <style>
-        .breadcrumb-container {
-            max-width: 800px;
-            margin-left: 10%;
+        .container {
             padding: 20px;
+            margin-right: 0px;
+            margin-left: 0px;
+            background-color: #585858;
         }
 
+     
         .content {
-        padding-bottom: .75rem;
-        padding-top: .75rem;
-    }
-        .card-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-    }
+            padding-bottom: .75rem;
+            padding-top: .75rem;
+            background-color: black;
+        }
 
-        
+        .content1 {
+
+            background-color: rgb(0, 0, 0);
+            color: white;
+        }
+
+        .carru {
+            font-family: Arial, sans-serif;
+
+            display: flex;
+            justify-content: center;
+            background-color: #000000;
+        }
+
+        .titulo {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            display: flex;
+            justify-content: flex-start;
+            background-color: #000000;
+
+        }
     </style>
+
 </head>
 
 <body>
     <div class="content">
-        <header-element logo-text="PhotoFolio" background-color="#000000" link1-text="Home"
-            link1-href="../Home/home.html" link2-text="Services" link2-href="../Services/services.html"
-            link3-text="About" link3-href="../about/about.html" link4-text="Gallery"
+        <header-element logo-text="PhotoFolio" background-color="#000000" link1-text="Inicio"
+            link1-href="../Home/home.html" link2-text="Servicios" link2-href="../Services/services.html"
+            link3-text="Sobre Nosotros" link3-href="../about/about.html" link4-text="Galeria"
             link4-href="../Gallery/Gallery.html" icon1-class="fab fa-facebook-f" icon1-href="https://facebook.com"
             icon2-class="fab fa-twitter" icon2-href="https://twitter.com" icon3-class="fab fa-instagram"
             icon3-href="https://instagram.com" icon4-class="fab fa-linkedin-in" icon4-href="https://linkedin.com">
         </header-element>
-<<<<<<< HEAD
-    <breadcrumbs-nav separator=" > ">
-        <li><a href="../home/header-element.js">Home</a></li>
-        <li >About</li>
-    </breadcrumbs-nav>
+
+        <section>
+            <div class="col-12">
+                <presentation-element heading-text="Sobre Nosotros" description-text="Mi filosofía se basa en la creatividad, la profesionalidad y el compromiso con la excelencia
+                    " button-text="" button-href="#hire">
+                </presentation-element>
+            </div>
+        </section>
+    </div>
+
+
+ 
+
+        <breadcrumb-nav>
+            <li><a href="../home/home.html">Inicio</a></li>
+            <li>Sobre Nosotros</li>
+        </breadcrumb-nav>
+   
+
+
+    <div class="content1">
+
+        <about-section image-src="../img/img.jpg"
+            heading="Diseñadora UI/UX y Fotógrafa Profesional" birthday="15 agosto 1987"
+            website="www.emilyjoh.com" phone="+1 (555) 123-4567" city="New York, EE.UU." age="30" degree="Licenciada"
+            email="info@emilyjohnson.com" freelance="Disponible"
+            paragraph1="¡Hola! Soy Emily Johnson, una fotógrafa profesional con sede en la vibrante ciudad de Nueva York. Con una pasión por capturar momentos auténticos y emociones genuinas, me especializo en retratos, fotografía de bodas y fotografía de estilo de vida."
+            paragraph2="No puedo esperar para conectarme contigo y ayudarte a capturar momentos que perdurarán para siempre. Ya sea que estés planeando una sesión de fotos íntima o una boda extravagante, ¡estoy aquí para hacer realidad tus visiones fotográficas!">
+        </about-section>
+    </div>
+
+
+
+
+    <div class="titulo">
+        <custom-section-title heading="Testimonials" subheading="What they are saying">
+        </custom-section-title>
+    </div>
+
+    <div class="carru">
+        <testimonials-carousel>
+            <testimonial-slide
+                text="Este es un gran producto.Officiis eligendi itaque labore et dolorum mollitia officiis optio vero. Quisquam sunt adipisci omnis et ut"
+                author="Juan Pérez" image="../img/kiara.jpg"></testimonial-slide>
+            <testimonial-slide
+                text="Me encantó el servicio. Officiis eligendi itaque labore et dolorum mollitia officiis optio vero. Quisquam sunt adipisci omnis et ut"
+                author="María López" image="../img/mishell.jpg"></testimonial-slide>
+            <testimonial-slide
+                text="Altamente recomendable. Officiis eligendi itaque labore et dolorum mollitia officiis optio vero. Quisquam sunt adipisci omnis et ut"
+                author="Carlos García" image="../img/steven.jpg"></testimonial-slide>
+        </testimonials-carousel>
+
+    </div>
+
+
+
+
+
+
+
+
     <footer-element footer-text="   PhotoFolio   " icon1-class="fab fa-facebook-f" icon1-href="https://facebook.com"
         icon2-class="fab fa-twitter" icon2-href="https://twitter.com" icon3-class="fab fa-instagram"
         icon3-href="https://instagram.com" icon4-class="fab fa-linkedin-in" icon4-href="https://linkedin.com">
     </footer-element>
-=======
-        <section>
-            <div class="col-12">
-                <presentation-element heading-text="About" 
-                    description-text="Odio et unde deleniti. Deserunt numquam exercitationem. 
-                    Officiis quo odio sint voluptas consequatur ut a odio voluptatem.
-                     Sit dolorum debitis veritatis natus dolores. Quasi ratione sint. 
-                     Sit quaerat ipsum dolorem."
-                    button-text="AVAILABLE FOR HIRE" button-href="#hire">
-                </presentation-element>
-            </div>
-        </section>
 
-    </div>
 
-    <div class="breadcrumb-container">
-        <breadcrumb-nav>
-            <li><a href="../home/home.html">Home</a></li>
-            <li>Library</li>
-        </breadcrumb-nav>
-    </div>
->>>>>>> ca13fd6877274cf1afb9b42c0e7e1382e7ddeede
+
+
+
+
+
+
+
+
+
+    <script type="module" src="ESModules.js"></script>
+    <script src="carousel.js"></script>
+
+
 
 </body>
 

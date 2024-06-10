@@ -12,7 +12,7 @@ class BreadcrumbNav extends HTMLElement {
     mapComponentAttributes() {
       const attributeMapping = ['separator'];
       attributeMapping.forEach(key => {
-        if (!this.attributes[key]) {
+        if (!this.hasAttribute(key)) {
           this.setAttribute(key, '/');
         }
       });
@@ -43,14 +43,19 @@ class BreadcrumbNav extends HTMLElement {
       const separator = this.getAttribute('separator');
       return `
         <style>
-          .breadcrumb-nav {
+          :host {
             display: block;
-            font-family: Arial, sans-serif;
+            font-family: 'Poppins', sans-serif;
+            background-color: #585858;
+           
+            padding: 5px;
           }
           .breadcrumb {
             list-style: none;
             padding: 0;
             display: flex;
+            margin-left: 10%;
+            font-size: 1.2em;
           }
           .breadcrumb-item {
             margin-right: 5px;
@@ -61,12 +66,15 @@ class BreadcrumbNav extends HTMLElement {
           }
           .breadcrumb-item a {
             text-decoration: none;
-            color: blue;
+            color: #0de592;
           }
           .breadcrumb-item.active a {
             color: black;
             pointer-events: none;
             cursor: default;
+          }
+          .breadcrumb li:last-child:not(:has(a)) {
+            color: #ffffff; 
           }
         </style>
       `;
