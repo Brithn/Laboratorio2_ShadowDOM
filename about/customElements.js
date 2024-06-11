@@ -7,7 +7,7 @@ class CustomSectionTitle extends HTMLElement {
     template.innerHTML = `
       <style>
         :host {
-          --background-color: #000000; 
+          --background-color: #000; 
           --default-color: #fafafa; 
           --heading-color: #ffffff; 
           --accent-color: #27a776; 

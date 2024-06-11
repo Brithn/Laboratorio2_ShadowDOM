@@ -55,6 +55,8 @@ class TestimonialSlide extends HTMLElement {
                     background-color: #000;
                     border-radius: 0px;
                     max-width: 500px;
+                    margin-top: 20px;
+                    margin-bottom: 20px;
                     box-shadow: 0 2px 4px rgba(255, 255, 255, 0.9);
                 }
                 .testimonial img {
@@ -62,6 +64,7 @@ class TestimonialSlide extends HTMLElement {
                     height: 100px;
                     border-radius: 50%;
                     margin-bottom: 10px;
+                    margin-top: 10px;
                 }
                 .testimonial p {
                     font-size: 1.1em;
@@ -69,7 +72,7 @@ class TestimonialSlide extends HTMLElement {
                     color: #fff;
                 }
                 .testimonial .author {
-                    font-size: 2em;
+                    font-size: 1em;
                     color: #fff;
                 }
             </style>
