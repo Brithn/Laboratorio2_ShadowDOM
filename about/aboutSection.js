@@ -1,6 +1,8 @@
 const template = document.createElement('template');
 template.innerHTML = `
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css">
+
   <style>
     :root { 
       --background-color: #000000; 
@@ -18,6 +20,7 @@ template.innerHTML = `
       scroll-margin-top: 100px;
       overflow: clip;
     }
+    
 
     @media (max-width: 1199px) {
       section,
@@ -26,12 +29,22 @@ template.innerHTML = `
       }
     }
 
+    @media (min-width: 992px) {
+      .col-lg-6 {
+          flex: 0 0 auto;
+          width: 50%;
+      }
+  }
+
     .about .content h2 {
       font-weight: 700;
-      font-size: 24px;
+      font-size: 24px;      
+    }
+    .about img {
+     
+      margin-bottom: 15px;
       
     }
-
     
     .about .content ul {
       list-style: none;
@@ -67,22 +80,22 @@ template.innerHTML = `
           <div class="row">
             <div class="col-lg-6">
               <ul>
-                <li><i class="bi bi-chevron-right"></i> <strong>Cumpleaños:</strong> <span></span></li>
-                <li><i class="bi bi-chevron-right"></i> <strong>Sitio Web:</strong> <span></span></li>
-                <li><i class="bi bi-chevron-right"></i> <strong>Teléfono:</strong> <span></span></li>
-                <li><i class="bi bi-chevron-right"></i> <strong>Ciudad:</strong> <span></span></li>
+                <li><i class="bi bi-chevron-right icon-verde"></i> <strong>Cumpleaños:</strong> <span></span></li>
+                <li><i class="bi bi-chevron-right icon-verde"></i> <strong>Web:</strong> <span></span></li>
+                <li><i class="bi bi-chevron-right icon-verde"></i> <strong>Teléfono:</strong> <span></span></li>
+                <li><i class="bi bi-chevron-right icon-verde"></i> <strong>Ciudad:</strong> <span></span></li>
               </ul>
             </div>
             <div class="col-lg-6">
               <ul>
-                <li><i class="bi bi-chevron-right"></i> <strong>Edad:</strong> <span></span></li>
-                <li><i class="bi bi-chevron-right"></i> <strong>Grado:</strong> <span></span></li>
-                <li><i class="bi bi-chevron-right"></i> <strong>Email:</strong> <span></span></li>
-                <li><i class="bi bi-chevron-right"></i> <strong>Freelance:</strong> <span></span></li>
+                <li><i class="bi bi-chevron-right icon-verde"></i> <strong>Edad:</strong> <span></span></li>
+                <li><i class="bi bi-chevron-right icon-verde"></i> <strong>Titulo:</strong> <span></span></li>
+                <li><i class="bi bi-chevron-right icon-verde"></i> <strong>Email:</strong> <span></span></li>
+                <li><i class="bi bi-chevron-right icon-verde"></i> <strong>Independiente:</strong> <span></span></li>
               </ul>
             </div>
+            <p class="py-3"></p>
           </div>
-          <p class="py-3"></p>
           <p class="m-0"></p>
         </div>
       </div>
