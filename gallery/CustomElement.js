@@ -2,12 +2,15 @@ class CustomElement extends HTMLElement {
   connectedCallback() {
       this.innerHTML = `
           <section class="hero">
-              <h1>Gallery Single</h1>
+              <h1>Gallery </h1>
               <p>
-                  Odio et unde deleniti. Deserunt numquam exercitationem. Officiis quo odio sint voluptas consequatur ut a odio voluptatem.
-                  Sit dolorum debitis veritatis natus dolores. Quasi ratione sint. Sit quaerat ipsum dolorem.
+                 En una galería bulliciosa, el arte y la vida se entrelazan en una danza de colores y formas.
+                  Cada obra cuenta una historia, susurra un secreto o despierta una emoción dormida. 
+                  Los pasos de los visitantes crean una sinfonía de pisadas que acompaña el murmullo de las conversaciones. 
+                  Entre las paredes adornadas, el tiempo parece detenerse, permitiendo a 
+                  los espectadores perderse en un mundo de creatividad infinita. En cada esquina,
+                  una nueva sorpresa aguarda, transformando la experiencia en un viaje inolvidable.
               </p>
-              <button>Available for Hire</button>
           </section>
           <section class="breadcrumb">
               <p>Home / Gallery Single</p>

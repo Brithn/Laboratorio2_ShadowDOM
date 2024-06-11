@@ -19,12 +19,15 @@ class ImageCarousel extends HTMLElement {
         const imageElements = images.map(image => `<img src="${image.src}" alt="${image.alt}">`).join('');
 
         this.shadowRoot.innerHTML = `
-            <style>
+           <style>
                 :host {
                     display: block;
                     position: relative;
-                    width: 100%;
+                    width: 60%;
+                    margin: 0 auto; 
                     overflow: hidden;
+                    border-radius: 10px; 
+                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
                 }
                 .carousel {
                     display: flex;
@@ -33,6 +36,7 @@ class ImageCarousel extends HTMLElement {
                 .carousel img {
                     width: 100%;
                     flex-shrink: 0;
+                    border-radius: 10px;
                 }
                 .controls {
                     position: absolute;
@@ -47,6 +51,16 @@ class ImageCarousel extends HTMLElement {
                     color: white;
                     padding: 10px;
                     cursor: pointer;
+                    border-radius: 50%;
+                }
+                .control:hover {
+                    background: rgba(0, 0, 0, 0.7);
+                }
+                .control.prev {
+                    margin-left: 10px;
+                }
+                .control.next {
+                    margin-right: 10px;
                 }
             </style>
             <div class="carousel">
