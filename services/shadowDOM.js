@@ -45,7 +45,7 @@ class MyCard extends HTMLElement {
                 max-width: 300px;
                 text-align: center;
                 transition: transform 0.3s ease, box-shadow 0.3s ease;
-                background-color: #fff;
+                background-color: #000000;
                 margin: 10px; /* Añade un margen para separarlas */
                 animation: fadeInUp 0.6s ease-out;
             }
@@ -55,19 +55,19 @@ class MyCard extends HTMLElement {
                 font-family: 'Poppins', sans-serif;
                 text-transform: uppercase;
                 letter-spacing: 1px;
-                color: #222;
+                color: #fff; /* Color del texto para contrastar con el fondo negro */
                 transition: color 0.3s ease;
             }
             .card p {
                 font-size: 1em;
-                color: #555;
+                color: #bbb; /* Color del texto para contrastar con el fondo negro */
                 font-family: 'Poppins', sans-serif;
                 margin-bottom: 20px;
                 transition: color 0.3s ease;
             }
             .card img {
-                width: 300px;
-                height: 300px;
+                width: 100%;
+                height: auto;
                 object-fit: cover;
                 border-radius: 5px;
                 transition: transform 0.3s ease;
