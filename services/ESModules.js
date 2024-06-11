@@ -5,12 +5,12 @@ const imagenes = [
         "descripcion": "Este es el proyecto 01 fue desarrollado para un video de youtube. Si te gusta el contenido dale like y suscribete"
     },
     {
-        "url": "img/img2.webp",
+        "url": "https://blog.foto24.com/wp-content/uploads/2019/04/Foto-3-1152x770.jpg",
         "nombre": "Proyecto 02",
         "descripcion": "Hola a todos este es el proyecto02 y fue desarrollado para un video de youtube. Si te gusta el contenido dale like y suscribete"
     },
     {
-        "url": "img/img3.webp",
+        "url": "https://www.prensalibre.com/wp-content/uploads/2022/08/EDN-27082022-FOTOS-MASCOTAS-FEBE-AVILA.jpg?quality=52",
         "nombre": "Proyecto 03",
         "descripcion": "Este proyecto, es el 03 y fue desarrollado para un video de youtube. Si te gusta el contenido dale like y suscribete"
     },
@@ -58,7 +58,6 @@ adelante.addEventListener('click', function () {
     actualizarImagen();
 });
 
-// Inicializar carrusel
 posicionCarrusel();
 
 export { posicionCarrusel, actualizarImagen };
