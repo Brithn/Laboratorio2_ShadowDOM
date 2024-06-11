@@ -4,26 +4,75 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/stylesGalery.css">
+    <script src="customElement.js"></script>
+    <script src="carousel.js"></script>
     <script src="../home/shadow.js"></script>
     <title>Document</title>
 </head>
 <body>
-    <header-element 
-    logo-text="PhotoFolio" 
-    background-color="#000000" 
-    link1-text="Home" 
-    link1-href="home.html" 
-    link2-text="Services" 
-    link2-href="/about"
-    icon1-class="fab fa-facebook-f"
-    icon1-href="https://facebook.com"
-    icon2-class="fab fa-twitter"
-    icon2-href="https://twitter.com"
-    icon3-class="fab fa-instagram"
-    icon3-href="https://instagram.com"
-    icon4-class="fab fa-linkedin-in"
-    icon4-href="https://linkedin.com">
-</header-element>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="/about">Services</a></li>
+            </ul>
+        </nav>
+        <div>
+            <p>PhotoFolio</p>
+            <div>
+                <a href="https://facebook.com" class="fab fa-facebook-f"></a>
+                <a href="https://twitter.com" class="fab fa-twitter"></a>
+                <a href="https://instagram.com" class="fab fa-instagram"></a>
+                <a href="https://linkedin.com" class="fab fa-linkedin-in"></a>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>Gallery Single</h1>
+        <p>
+            Odio et unde deleniti. Deserunt numquam exercitationem. Officiis quo odio sint voluptas consequatur ut a odio voluptatem.
+            Sit dolorum debitis veritatis natus dolores. Quasi ratione sint. Sit quaerat ipsum dolorem.
+        </p>
+        <button>Available for Hire</button>
+    </section>
+
+    <section class="breadcrumb">
+        <p>Home / Gallery Single</p>
+    </section>
+
+    <section class="gallery">
+        <div class="image-container">
+            <img src="Imagen1.jpg" alt="Gallery Image 1">
+            <img src="Imagen2.jpg" alt="Gallery Image 2">
+            <img src="Imagen3.jpg" alt="Gallery Image 3">
+        </div>
+        
+        <div>
+            <h2>This is an example of portfolio details</h2>
+            <p>
+                Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi labore quia quia. Exercitationem repudiandae officiis neque suscipit non officia eaque ea voluptate. Molestiae officiis omnis exercitationem neque sunt et. Neque voluptates earum et sint dolorem sint voluptatem.
+            </p>
+            <blockquote>
+                Eos est fugiat rerum alias molestiae alias esse maxime aut quam. Qui maxime quisquam qui maxime ut et et necessitatibus. Quia sunt debitis inventore harum amet. Quia nam eos saepe. Quo eius qui autem et est.
+            </blockquote>
+            <p>By Sara Wilsson</p>
+        </div>
+
+        <aside class="project-info">
+            <h3>Project Information</h3>
+            <ul>
+                <li><strong>Category:</strong> Web design</li>
+                <li><strong>Client:</strong> Sara Wilsson</li>
+                <li><strong>Project Date:</strong> 1 March, 2020</li>
+                <li><strong>Project URL:</strong> <a href="#">www.example.com</a></li>
+            </ul>
+        </aside>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 PhotoFolio. All rights reserved.</p>
+    </footer>
 </body>
 </html>
