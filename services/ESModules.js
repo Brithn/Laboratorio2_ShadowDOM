@@ -1,18 +1,18 @@
 const imagenes = [
     {
         "url": "https://static-cse.canva.com/blob/984400/Planosfotograficos.08c8c0db.avif",
-        "nombre": "Proyecto 01",
-        "descripcion": "Este es el proyecto 01 fue desarrollado para un video de youtube. Si te gusta el contenido dale like y suscribete"
+        "nombre": "La Belleza de lo Cotidiano",
+        "descripcion": " 'La fotografía es el arte de congelar el tiempo, capturando la esencia de un momento en una imagen.' "
     },
     {
         "url": "https://blog.foto24.com/wp-content/uploads/2019/04/Foto-3-1152x770.jpg",
-        "nombre": "Proyecto 02",
-        "descripcion": "Hola a todos este es el proyecto02 y fue desarrollado para un video de youtube. Si te gusta el contenido dale like y suscribete"
+        "nombre": "Historias a Través del Lente",
+        "descripcion": " 'Cada foto cuenta una historia; cada historia guarda un recuerdo.' "
     },
     {
         "url": "https://www.prensalibre.com/wp-content/uploads/2022/08/EDN-27082022-FOTOS-MASCOTAS-FEBE-AVILA.jpg?quality=52",
-        "nombre": "Proyecto 03",
-        "descripcion": "Este proyecto, es el 03 y fue desarrollado para un video de youtube. Si te gusta el contenido dale like y suscribete"
+        "nombre": "Naturaleza en su Máxima Expresión",
+        "descripcion": " 'La belleza de la vida se revela en los pequeños detalles capturados por la cámara.' "
     },
 ];
 
