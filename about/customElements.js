@@ -16,10 +16,11 @@ class CustomSectionTitle extends HTMLElement {
         .container {
           color: var(--default-color);
           background-color: var(--background-color);
-          font-family: var(--default-font);
+          font-family: 'Poppins', sans-serif;
+          
         }
         .section-title {
-          padding-bottom: 60px;
+          padding: 20px;
           position: relative;
         }
         .section-title h2 {
@@ -27,12 +28,13 @@ class CustomSectionTitle extends HTMLElement {
           font-weight: 400;
           padding: 10px;
           line-height: 1px;
-          margin: 0;
+          margin: 0;  
+          margin-left: 10%;
           letter-spacing: 1.5px;
           text-transform: uppercase;
           color: color-mix(in srgb, var(--default-color), transparent 50%);
           position: relative;
-          font-family: var(--default-font);
+          font-family: 'Poppins', sans-serif;
         }
         .section-title h2::after {
           content: "";
@@ -41,13 +43,15 @@ class CustomSectionTitle extends HTMLElement {
           display: inline-block;
           background: var(--accent-color);
           margin: 4px 10px;
+          
         }
         .section-title p {
           color: var(--heading-color);
           margin: 0;
+          margin-left: 10%;
           font-size: 36px;
           font-weight: 400;
-          font-family: var(--heading-font);
+          font-family: 'Poppins', sans-serif;
           margin-right: 20px;
         }
       </style>

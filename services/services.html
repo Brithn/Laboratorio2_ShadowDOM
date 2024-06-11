@@ -11,24 +11,30 @@
     <script src="../services/script.js"></script>
     <script src="../home/footer.js"></script>
     <script src="../services/shadowDOM.js"></script>
+    <script src="../services/template.js"></script>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/styleServices.css">
     <script src="../services/customElements.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script type="module" src="../services/ESModules.js"></script>
+    <script src="../home/presentacion-element.js"></script>
+
 
 </head>
 
 <body>
+    
     <div class="content">
-        <header-element logo-text="PhotoFolio" background-color="#000000" link1-text="Home"
-            link1-href="../Home/home.html" link2-text="Services" link2-href="../Services/services.html"
-            link3-text="About" link3-href="../about/about.html" link4-text="Gallery"
+        <header-element logo-text="PhotoFolio" background-color="#000000" link1-text="Inicio"
+            link1-href="../Home/home.html" link2-text="Servicios" link2-href="../Services/services.html"
+            link3-text="Sobre Nosotros" link3-href="../about/about.html" link4-text="Galeria"
             link4-href="../Gallery/Gallery.html" icon1-class="fab fa-facebook-f" icon1-href="https://facebook.com"
             icon2-class="fab fa-twitter" icon2-href="https://twitter.com" icon3-class="fab fa-instagram"
             icon3-href="https://instagram.com" icon4-class="fab fa-linkedin-in" icon4-href="https://linkedin.com">
         </header-element>
     </div>
+    <dark-mode-toggle></dark-mode-toggle>
 
     <div class="container">
         <my-service-box title="Servicios"
@@ -36,19 +42,87 @@
             button-text="Contrátanos" button-link="contact.html"></my-service-box>
     </div>
 
+    <template id="my-card-template">
+        <style>
+            .card {
+                border: 1px solid #ffffff;
+                border-radius: 10px;
+                box-shadow: 0 4px 8px #27a776;
+                padding: 20px;
+                max-width: 300px;
+                text-align: center;
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+                background-color: #000000;
+                margin: 10px;
+                animation: fadeInUp 0.6s ease-out;
+            }
+            .card h2 {
+                font-size: 1.5em;
+                margin-bottom: 10px;
+                font-family: 'Poppins', sans-serif;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                color: #27a776;
+                transition: color 0.3s ease;
+            }
+            .card p {
+                font-size: 1em;
+                color: #ffffff;
+                font-family: 'Poppins', sans-serif;
+                margin-bottom: 20px;
+                transition: color 0.3s ease;
+            }
+            .card img {
+                width: 300px;
+                height: 300px;
+                object-fit: cover;
+                border-radius: 5px;
+                transition: transform 0.3s ease;
+            }
+            .card:hover {
+                transform: scale(1.05);
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            }
+            .card:hover h2 {
+                color: #27a776;
+            }
+            .card:hover p{
+                color: #27a776;
+            }
+            .card:hover img {
+                transform: scale(1.1);
+            }
+            @keyframes fadeInUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(20px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+        </style>
+        <div class="card">
+            <h2></h2>
+            <p></p>
+            <img alt="Card Image">
+        </div>
+    </template>
+
     <div class="card-container">
         <my-card title="Sesiones Fotográficas"
-            description="Capturamos tus momentos más especiales con sesiones fotográficas profesionales. Perfectas para toda la familia."
-            image="https://i0.wp.com/konicadigitalphotoexpress.com/wp-content/uploads/2023/04/post-sesion-basica.jpg?fit=1080%2C1350&ssl=1"></my-card>
+        description="Capturamos tus momentos más especiales con sesiones fotográficas profesionales. Perfectas para toda la familia."
+        image="https://i0.wp.com/konicadigitalphotoexpress.com/wp-content/uploads/2023/04/post-sesion-basica.jpg?fit=1080%2C1350&ssl=1"></my-card>
         <my-card title="Impresiones Fotográficas"
-            description="Transforma tus recuerdos en impresiones de alta calidad. Ideales para decorar tus espacios favoritos en todo momento."
-            image="https://i0.wp.com/konicadigitalphotoexpress.com/wp-content/uploads/2023/11/impresion-tamano-polaroid-8-8.jpg?fit=1080%2C1080&ssl=1"></my-card>
-        <my-card title="Regalos Personalizados"
-            description="Sorprende a tus seres queridos con regalos personalizados únicos y creativos. Perfectos para cualquier ocasión."
-            image="https://i0.wp.com/konicadigitalphotoexpress.com/wp-content/uploads/2023/05/plato-de-ceramica.jpg?fit=1080%2C1080&ssl=1"></my-card>
+        description="Transforma tus recuerdos en impresiones de alta calidad. Ideales para decorar tus espacios favoritos en todo momento."
+        image="https://i0.wp.com/konicadigitalphotoexpress.com/wp-content/uploads/2023/11/impresion-tamano-polaroid-8-8.jpg?fit=1080%2C1080&ssl=1"></my-card>
+         <my-card title="Regalos Personalizados"
+        description="Sorprende a tus seres queridos con regalos personalizados únicos y creativos. Perfectos para cualquier ocasión."
+        image="https://i0.wp.com/konicadigitalphotoexpress.com/wp-content/uploads/2023/05/plato-de-ceramica.jpg?fit=1080%2C1080&ssl=1"></my-card>
         <my-card title="Fotografía Aérea y Video Drone"
-            description="Descubre nuevas perspectivas con nuestras fotografías aéreas y videos drone. Ideal para eventos y promociones."
-            image="https://adronespace.es/wp-content/uploads/2023/11/Fotografia-aerea-y-video-con-drones.jpg"></my-card>
+        description="Descubre nuevas perspectivas con nuestras fotografías aéreas y videos drone. Ideal para eventos y promociones."
+        image="https://adronespace.es/wp-content/uploads/2023/11/Fotografia-aerea-y-video-con-drones.jpg"></my-card>
     </div>
 
     <div class="pricing-section">
@@ -96,11 +170,36 @@
             </div>
         </div>
     </div>
+
+    <div class="carrusel-container">
+        <div class="carrusel">
+            <div class="atras" id="atras">
+                <i class="fas fa-chevron-left"></i>
+            </div>
+
+            <div class="imagenes">
+                <div id="img">
+                    <img class="img" src="https://static-cse.canva.com/blob/984400/Planosfotograficos.08c8c0db.avif" alt="imagen 1" loading="lazy">
+                </div>
+                
+                <div id="texto" class="texto">
+                    <h3>La Belleza de lo Cotidiano</h3>
+                    <p>'La fotografía es el arte de congelar el tiempo, capturando la esencia de un momento en una imagen.'</p>
+                </div>
+            </div>
+
+            <div class="adelante" id="adelante">
+                <i class="fas fa-chevron-right"></i>
+            </div>
+        </div>
+
+        <div class="puntos" id="puntos"></div>
+    </div>
+
     <footer-element footer-text="   PhotoFolio   " icon1-class="fab fa-facebook-f" icon1-href="https://facebook.com"
         icon2-class="fab fa-twitter" icon2-href="https://twitter.com" icon3-class="fab fa-instagram"
         icon3-href="https://instagram.com" icon4-class="fab fa-linkedin-in" icon4-href="https://linkedin.com">
     </footer-element>
-
 
 </body>
 

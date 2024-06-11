@@ -1,16 +1,25 @@
-class MyCard extends HTMLElement {
-
+class DarkModeToggle extends HTMLElement {
     constructor() {
         super();
         this.shadowDOM = this.attachShadow({ mode: 'open' });
-    }
-
-    connectedCallback() {
         this.render();
     }
 
-    getAttributeOrDefault(attributeName, defaultValue = '') {
-        return this.getAttribute(attributeName) || defaultValue;
+    connectedCallback() {
+        this.toggleButton = this.shadowDOM.getElementById('toggle-button');
+        this.toggleIcon = this.shadowDOM.getElementById('toggle-icon');
+        this.body = document.body;
+
+        this.toggleButton.addEventListener('click', () => {
+            this.body.classList.toggle('light-mode');
+            if (this.body.classList.contains('light-mode')) {
+                this.toggleIcon.classList.remove('fa-moon');
+                this.toggleIcon.classList.add('fa-sun');
+            } else {
+                this.toggleIcon.classList.remove('fa-sun');
+                this.toggleIcon.classList.add('fa-moon');
+            }
+        });
     }
 
     render() {
@@ -21,84 +30,77 @@ class MyCard extends HTMLElement {
     }
 
     template() {
-        const title = this.getAttributeOrDefault('title');
-        const description = this.getAttributeOrDefault('description');
-        const image = this.getAttributeOrDefault('image');
-        
         return `
-        <div class="card">
-            <h2>${title}</h2>
-            <p>${description}</p>
-            <img src="${image}" alt="Card Image">
-        </div>
+            <div class="toggle-container">
+                <button id="toggle-button" class="toggle-button">
+                    <i id="toggle-icon" class="fas fa-moon"></i>
+                </button>
+            </div>
         `;
     }
 
     templateCss() {
         return `
-        <style>
-            .card {
-                border: 1px solid #ddd;
-                border-radius: 10px;
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-                padding: 20px;
-                max-width: 300px;
-                text-align: center;
-                transition: transform 0.3s ease, box-shadow 0.3s ease;
-                background-color: #000000;
-                margin: 10px; /* Añade un margen para separarlas */
-                animation: fadeInUp 0.6s ease-out;
-            }
-            .card h2 {
-                font-size: 1.5em;
-                margin-bottom: 10px;
-                font-family: 'Poppins', sans-serif;
-                text-transform: uppercase;
-                letter-spacing: 1px;
-                color: #fff; /* Color del texto para contrastar con el fondo negro */
-                transition: color 0.3s ease;
-            }
-            .card p {
-                font-size: 1em;
-                color: #bbb; /* Color del texto para contrastar con el fondo negro */
-                font-family: 'Poppins', sans-serif;
-                margin-bottom: 20px;
-                transition: color 0.3s ease;
-            }
-            .card img {
-                width: 100%;
-                height: auto;
-                object-fit: cover;
-                border-radius: 5px;
-                transition: transform 0.3s ease;
-            }
-            .card:hover {
-                transform: scale(1.05);
-                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-            }
-            .card:hover h2, .card:hover p {
-                color: green;
-            }
-            .card:hover img {
-                transform: scale(1.1);
-            }
-            @keyframes fadeInUp {
-                from {
-                    opacity: 0;
-                    transform: translateY(20px);
-                }
-                to {
-                    opacity: 1;
-                    transform: translateY(0);
-                }
-            }
-        </style>
-        `;
-    }
+            <style>
+                @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css');
 
-    disconnectedCallback() {
-        this.remove();
+                .toggle-container {
+                    position: fixed;
+                    top: 20px;
+                    right: 20px;
+                }
+
+                .toggle-button {
+                    background-color: #ffffff;
+                    border: none;
+                    border-radius: 50%;
+                    width: 40px;
+                    height: 40px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    cursor: pointer;
+                    transition: background-color 0.3s;
+                }
+
+                .toggle-button .fas {
+                    color: #000000;
+                }
+
+                .toggle-button.light-mode {
+                    background-color: #000000;
+                }
+
+                .toggle-button.light-mode .fas {
+                    color: #ffffff;
+                }
+
+                body.light-mode {
+                    background-color: #ffffff;
+                    color: #000000;
+                }
+            </style>
+        `;
     }
 }
 
-window.customElements.define('my-card', MyCard);
+window.customElements.define('dark-mode-toggle', DarkModeToggle);
+
+document.addEventListener('DOMContentLoaded', () => {
+    const style = document.createElement('style');
+    style.textContent = `
+        body {
+            margin: 0;
+            font-family: serif;
+            background-color: #000000;
+            color: #ffffff;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        body.light-mode {
+            background-color: #ffffff;
+            color: #000000;
+        }
+    `;
+    document.head.appendChild(style);
+});
