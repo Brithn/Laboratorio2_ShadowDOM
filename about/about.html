@@ -8,8 +8,8 @@
 
 
     <script src="customElements.js"></script>
-    <script src="shadowDOM.js" defer></script>
     <script src="template.js" defer></script>
+    <script src="import.js" type="module"></script>
     <link rel="stylesheet" href="style.css">
 
 
@@ -108,24 +108,26 @@
 
 
      
-     <breadcrumb-nav>
+    <breadcrumb-nav separator="/">
+        
         <li><a href="../home/home.html">Inicio</a></li>
         <li>Sobre Nosotros</li>
     </breadcrumb-nav>
-    
-
    
 
 
   
 
-        <about-section image-src="../img/img.jpg"
-            heading="Fotógrafa Profesional" birthday="15/08/1987"
-            website="www.emilyjoh.com" phone="+15551234567" city="New York" age="30" degree="Licenciada"
-            email="info@emilyjohnson.com" freelance="Disponible"
-            paragraph1="¡Hola! Soy Emily Johnson, una fotógrafa profesional con sede en la vibrante ciudad de Nueva York. Con una pasión por capturar momentos auténticos y emociones genuinas, me especializo en retratos, fotografía de bodas y fotografía de estilo de vida."
-            paragraph2="No puedo esperar para conectarme contigo y ayudarte a capturar momentos que perdurarán para siempre. Ya sea que estés planeando una sesión de fotos íntima o una boda extravagante, ¡estoy aquí para hacer realidad tus visiones fotográficas!">
-        </about-section>
+    <about-section image="../img/img.jpg"
+    heading="Fotógrafa Profesional" birthday="15/08/1987"
+    website="www.emilyjoh.com" phone="+15551234567" city="New York" age="30" degree="Licenciada"
+    email="info@emilyjohnson.com" freelance="Disponible"
+    paragraph1="¡Hola! Soy Emily Johnson, una fotógrafa profesional con sede en la vibrante ciudad de Nueva York. Con una pasión por capturar momentos auténticos y emociones genuinas, me especializo en retratos, fotografía de bodas y fotografía de estilo de vida."
+    paragraph2="No puedo esperar para conectarme contigo y ayudarte a capturar momentos que perdurarán para siempre. Ya sea que estés planeando una sesión de fotos íntima o una boda extravagante, ¡estoy aquí para hacer realidad tus visiones fotográficas!"
+    paragraph3="Mi trayectoria como fotógrafa profesional se ha definido por mi dedicación a capturar la esencia de cada momento. Desde las risas espontáneas hasta los gestos más sutiles, mi objetivo es inmortalizar la belleza y la autenticidad en cada imagen que creo. Con una formación académica sólida y años de experiencia en el campo, he perfeccionado mi arte para ofrecer a mis clientes resultados excepcionales. ">
+
+</about-section>
+
   
 
 
@@ -167,12 +169,6 @@
         
 
 
-
-
-
-
-
-
     <footer-element footer-text="   PhotoFolio   " icon1-class="fab fa-facebook-f" icon1-href="https://facebook.com"
         icon2-class="fab fa-twitter" icon2-href="https://twitter.com" icon3-class="fab fa-instagram"
         icon3-href="https://instagram.com" icon4-class="fab fa-linkedin-in" icon4-href="https://linkedin.com">
@@ -181,18 +177,7 @@
 
 
 
-
-
-
-
-
-
-
- 
-
     <script src="aboutSection.js"></script>
- 
-
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <script src="carousel.js"></script>
