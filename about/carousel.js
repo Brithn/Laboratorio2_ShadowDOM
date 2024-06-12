@@ -1,88 +1,81 @@
-// carousel.js
-class TestimonialsCarousel extends HTMLElement {
-    connectedCallback() {
-        this.slides = this.querySelectorAll('testimonial-slide');
-        this.currentIndex = 0;
-        this.showSlide(this.currentIndex);
-        this.startAutoSlide();
-    }
-
-    showSlide(index) {
-        this.slides.forEach((slide, i) => {
-            slide.style.display = i === index ? 'block' : 'none';
-        });
-    }
-
-    startAutoSlide() {
-        this.interval = setInterval(() => {
-            this.currentIndex = (this.currentIndex + 1) % this.slides.length;
-            this.showSlide(this.currentIndex);
-        }, 3000);
-    }
-
-    stopAutoSlide() {
-        clearInterval(this.interval);
-    }
-}
-
-customElements.define('testimonials-carousel', TestimonialsCarousel);
-
-class TestimonialSlide extends HTMLElement {
+class TestimonialCarousel extends HTMLElement {
     constructor() {
-        super();
-        this.attachShadow({ mode: 'open' });
+      super();
+      this.attachShadow({ mode: 'open' });
     }
-
+  
     connectedCallback() {
-        this.render();
+      this.render();
+      this.initCarousel();
     }
-
+  
     render() {
-        const text = this.getAttribute('text');
-        const author = this.getAttribute('author');
-        const image = this.getAttribute('image');
-
-        this.shadowRoot.innerHTML = `
-            <style>
-              
-                :host {
-                    display: none;
-                }
-                
-                .testimonial {
-                    text-align: center;
-                    padding: 20px;
-                    background-color: #000;
-                    border-radius: 0px;
-                    max-width: 500px;
-                    margin-top: 20px;
-                    margin-bottom: 20px;
-                    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.9);
-                }
-                .testimonial img {
-                    width: 100px;
-                    height: 100px;
-                    border-radius: 50%;
-                    margin-bottom: 10px;
-                    margin-top: 10px;
-                }
-                .testimonial p {
-                    font-size: 1.1em;
-                    margin-bottom: 5px;
-                    color: #fff;
-                }
-                .testimonial .author {
-                    font-size: 1em;
-                    color: #fff;
-                }
-            </style>
-            <div class="testimonial">
-                <p>"${text}"</p>
-                <img src="${image}" alt="Avatar">
-                <div class="author">${author}</div>
-            </div>
-        `;
+      const testimonialElements = Array.from(this.children);
+      const testimonials = testimonialElements.map(testimonial => ({
+        img: testimonial.getAttribute('img'),
+        name: testimonial.getAttribute('name'),
+        title: testimonial.getAttribute('title'),
+        text: testimonial.getAttribute('text')
+      }));
+  
+      this.shadowRoot.innerHTML = `
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+        <link rel="stylesheet" href="styleCarru.css">
+        <div class="gtco-testimonials">
+          <div class="owl-carousel owl-carousel1 owl-theme">
+            ${testimonials.map(testimonial => `
+              <div class="card text-center">
+                <img class="card-img-top" src="${testimonial.img}" alt="">
+                <div class="card-body">
+                  <h5>${testimonial.name}<br />
+                    <span>${testimonial.title}</span>
+                  </h5>
+                  <p class="card-text">${testimonial.text}</p>
+                </div>
+              </div>
+            `).join('')}
+          </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+      `;
     }
-}
-
-customElements.define('testimonial-slide', TestimonialSlide);
+  
+    initCarousel() {
+      $(this.shadowRoot.querySelector('.owl-carousel1')).owlCarousel({
+        loop: true,
+        center: true,
+        margin: 0,
+        responsiveClass: true,
+        nav: false,
+        autoplay: true,
+        autoplayTimeout: 5000,
+        responsive: {
+          0: {
+            items: 1,
+            nav: false
+          },
+          680: {
+            items: 2,
+            nav: false,
+            loop: false
+          },
+          1000: {
+            items: 3,
+            nav: true
+          }
+        }
+      });
+    }
+  }
+  
+  class TestimonialItem extends HTMLElement {
+    constructor() {
+      super();
+    }
+  }
+  
+  customElements.define('testimonial-carousel', TestimonialCarousel);
+  customElements.define('testimonial-item', TestimonialItem);
+  
