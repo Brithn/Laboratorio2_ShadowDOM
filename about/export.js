@@ -45,6 +45,7 @@ class BreadcrumbNav extends HTMLElement {
       const separator = this.getAttribute('separator');
       return `
           <style>
+          
           :host {
             display: block;
             font-family: 'Poppins', sans-serif;
@@ -53,7 +54,7 @@ class BreadcrumbNav extends HTMLElement {
         nav {
             display: block;
             unicode-bidi: isolate;
-            padding: 15px 0;
+            padding: 15px ;
         }
         .breadcrumb {
             list-style: none;
@@ -67,7 +68,7 @@ class BreadcrumbNav extends HTMLElement {
             margin-right: 5px;
         }
         .breadcrumb-item :hover {
-            color: #ff7f50;
+            color: #ffffff;
         }
         .breadcrumb-item + .breadcrumb-item::before {
             content: "${separator}";
