@@ -32,8 +32,9 @@ header nav ul li a {
 
 .hero {
     text-align: center;
-    padding: 50px 20px;
-    background-color: #222;
+    padding:10%;
+    color: #fff;
+    background-color: #000;
 }
 
 .hero h1 {
