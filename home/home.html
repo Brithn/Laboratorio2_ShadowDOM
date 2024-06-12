@@ -29,6 +29,7 @@
         flex-wrap: wrap;
         justify-content: center;
     }
+    
 </style>
 
 <body>
@@ -116,10 +117,28 @@
         </section>
     </div>
 
-    <footer-element footer-text="   PhotoFolio   " icon1-class="fab fa-facebook-f" icon1-href="https://facebook.com"
-        icon2-class="fab fa-twitter" icon2-href="https://twitter.com" icon3-class="fab fa-instagram"
-        icon3-href="https://instagram.com" icon4-class="fab fa-linkedin-in" icon4-href="https://linkedin.com">
-    </footer-element>
+    <template id="footer-template">
+        <footer class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <hr>
+                        <p>&copy; Copyright <span id="footer-text"></span> Todos los derechos son Reservados</p>
+                    </div>
+                    <div class="col-12">
+                        <div class="social-icons">
+                            <a id="icon1" href="#"><i class="fab fa-facebook"></i></a>
+                            <a id="icon2" href="#"><i class="fab fa-twitter"></i></a>
+                            <a id="icon3" href="#"><i class="fab fa-instagram"></i></a>
+                            <a id="icon4" href="#"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </template>
+    <div id="footer-container"></div>
+
 
     <script src="../home/header-element.js"></script>
     <script src="../home/presentacion-element.js"></script>
