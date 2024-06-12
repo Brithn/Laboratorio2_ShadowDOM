@@ -9,7 +9,7 @@ class TemplateSection extends HTMLElement {
     }
 
     render() {
-        const template = document.getElementById('template-section-template');
+        const template = document.getElementById('portfolioDetailsTemplate');
         const templateContent = template.content.cloneNode(true);
 
         this.shadowDOM.appendChild(templateContent);

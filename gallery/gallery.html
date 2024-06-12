@@ -11,6 +11,13 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/stylesGalery.css">
     <script src="../services/shadowDOM.js"></script>
+    <script src="../services/template.js"></script>
+    <script src="../home/header-element.js"></script>
+    <script src="../home/presentacion-element.js"></script>
+    <script src="../home/footer.js"></script>
+    <script src="customElement.js"></script>
+    <script src="carousel.js"></script>
+    <script src="template.js"></script>
     <dark-mode-toggle></dark-mode-toggle>
 </head>
 
@@ -30,113 +37,133 @@
         <section class="gallery">
             <image-carousel></image-carousel>
 
-            <template id="template-section-template">
+            <template id="portfolioDetailsTemplate">
                 <style>
                     .container {
                         display: flex;
-                        flex-direction: column;
-                        gap: 20px;
-                    }
-                    .row {
-                        display: flex;
-                        flex-direction: row;
-                        gap: 20px;
-                    }
-                    .column {
-                        flex: 1;
-                    }
-                    .project-info {
-                        margin-top: 20px;
-                    }
-                    .card {
-                        border: 1px solid #ffffff;
-                        border-radius: 10px;
-                        box-shadow: 0 4px 8px #27a776;
+                        justify-content: space-between;
                         padding: 20px;
-                        max-width: 300px;
-                        text-align: center;
-                        transition: transform 0.3s ease, box-shadow 0.3s ease;
-                        background-color: #000000;
-                        margin: 10px;
-                        animation: fadeInUp 0.6s ease-out;
-                    }
-                    .card h2 {
-                        font-size: 1.5em;
-                        margin-bottom: 10px;
-                        font-family: 'Poppins', sans-serif;
-                        text-transform: uppercase;
-                        letter-spacing: 1px;
-                        color: #27a776;
-                        transition: color 0.3s ease;
-                    }
-                    .card p {
-                        font-size: 1em;
-                        color: #ffffff;
-                        font-family: 'Poppins', sans-serif;
-                        margin-bottom: 20px;
-                        transition: color 0.3s ease;
-                    }
-                    .card img {
-                        width: 300px;
-                        height: 300px;
-                        object-fit: cover;
+                        background-color: #000;
+                     
                         border-radius: 5px;
-                        transition: transform 0.3s ease;
+                        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                        margin-bottom: 20px;
                     }
-                    .card:hover {
-                        transform: scale(1.05);
-                        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            
+                    .portfolio-details {
+                        width: 70%;
                     }
-                    .card:hover h2 {
-                        color: #27a776;
+            
+                    .portfolio-details h1 {
+                        font-size: 2.5em;
+                        color: #fff;
+                        margin-bottom: 10px;
                     }
-                    .card:hover p{
-                        color: #27a776;
+            
+                    .portfolio-details p {
+                        color: #fff;
+                        font-size: 1.2em;
                     }
-                    .card:hover img {
-                        transform: scale(1.1);
+            
+                    .testimonial {
+                        margin-top: 20px;
+                        padding: 10px;
+                        background-color: #fff;
+                        border-radius: 5px;
                     }
-                    @keyframes fadeInUp {
-                        from {
-                            opacity: 0;
-                            transform: translateY(20px);
-                        }
-                        to {
-                            opacity: 1;
-                            transform: translateY(0);
-                        }
+            
+                    .testimonial .quote {
+                        font-style: italic;
+                        color: #888;
+                    }
+            
+                    .testimonial .author {
+                        display: flex;
+                        align-items: center;
+                        margin-top: 10px;
+                    }
+            
+                    .testimonial .author img {
+                        width: 40px;
+                        height: 40px;
+                        border-radius: 50%;
+                        margin-right: 10px;
+                    }
+            
+                    .testimonial .author h4 {
+                        font-size: 18px;
+                        color: #333;
+                        margin: 0;
+                    }
+            
+                    .testimonial .author p {
+                        color: #666;
+                        margin: 0;
+                    }
+            
+                    .project-information {
+                        width: 25%;
+                        padding: 10px;
+                        background-color: #fff;
+                        border-radius: 5px;
+                        height: 25%;
+                    }
+            
+                    .project-information h2 {
+                        font-size: 20px;
+                        color: #333;
+                        margin-bottom: 10px;
+                    }
+            
+                    .project-information ul {
+                        padding-left: 20px;
+                    }
+            
+                    .project-information li {
+                        color: #666;
+                    }
+            
+                    .project-information a.button {
+                        display: inline-block;
+                        padding: 10px 20px;
+                        background-color: #007bff;
+                        color: #fff;
+                        text-decoration: none;
+                        border-radius: 5px;
+                        margin-top: 10px;
+                    }
+            
+                    .project-information a.button:hover {
+                        background-color: #0056b3;
                     }
                 </style>
                 <div class="container">
-                    <div class="row">
-                        <div class="column card">
-                            <h2>This is an example of portfolio details</h2>
-                            <p>
-                                Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi
-                                labore quia quia. Exercitationem repudiandae officiis neque suscipit non officia eaque
-                                ea voluptate. Molestiae officiis omnis exercitationem neque sunt et. Neque voluptates
-                                earum et sint dolorem sint voluptatem.
-                            </p>
+                    <div class="portfolio-details">
+                        <h1>Detalle</h1>
+                        <p>La fotografía es mucho más que la simple captura de imágenes; es una poderosa forma de expresión artística que nos permite explorar el mundo que nos rodea de manera única. A través del lente de una cámara, los fotógrafos pueden revelar la belleza oculta en los momentos cotidianos, transmitir emociones profundas y contar historias que trascienden las barreras del tiempo y el espacio.</p>
+                        <p>En nuestra era digital, la fotografía se ha convertido en un medio omnipresente que nos conecta con el mundo de una manera íntima y significativa. Ya sea documentando momentos importantes en nuestras vidas, capturando la majestuosidad de la naturaleza o explorando los rincones más remotos del planeta, cada imagen cuenta una historia única y nos invita a reflexionar sobre nuestro lugar en el universo.</p>
+                        
+                        <div class="testimonial">
+                            <p class="quote">"Export tempor illum tamen malis malis eram quae irure esse labore..."</p>
+                            <div class="author">
+                                <img src="Imagen4.jpg" alt="Sara Wilsson">
+                                <div class="author-info">
+                                    <h4>Sara Wilsson</h4>
+                                    <p>Designer</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="column card">
-                            <blockquote>
-                                Eos est fugiat rerum alias molestiae alias esse maxime aut quam. Qui maxime quisquam qui
-                                maxime ut et et necessitatibus. Quia sunt debitis inventore harum amet. Quia nam eos
-                                saepe. Quo eius qui autem et est.
-                            </blockquote>
-                            <p>By Sara Wilsson</p>
-                        </div>
-                        <div class="column card project-info">
-                            <h3>Project Information</h3>
-                            <ul>
-                                <li><strong>Category:</strong> Web design</li>
-                                <li><strong>Client:</strong> Sara Wilsson</li>
-                                <li><strong>Project Date:</strong> 1 March, 2020</li>
-                                <li><strong>Project URL:</strong> <a href="#">www.example.com</a></li>
-                            </ul>
-                        </div>
+                    
+                    <div class="project-information">
+                        <h2>Project information</h2>
+                        <ul>
+                            <li><strong>Category:</strong> Web design</li>
+                            <li><strong>Client:</strong> ASU Company</li>
+                            <li><strong>Project Date:</strong> 01 March, 2020</li>
+                            <li><strong>Project URL:</strong> <a href="http://www.example.com">www.example.com</a></li>
+                        </ul>
+                        <a href="http://www.example.com" class="button">Visit Website</a>
                     </div>
                 </div>
             </template>
@@ -144,18 +171,14 @@
             <template-section> </template-section>
         </section>
     </div>
+   
 
     <footer-element footer-text="PhotoFolio" icon1-class="fab fa-facebook-f" icon1-href="https://facebook.com"
         icon2-class="fab fa-twitter" icon2-href="https://twitter.com" icon3-class="fab fa-instagram"
         icon3-href="https://instagram.com" icon4-class="fab fa-linkedin-in" icon4-href="https://linkedin.com">
     </footer-element>
 
-    <script src="../home/header-element.js"></script>
-    <script src="../home/presentacion-element.js"></script>
-    <script src="../home/footer.js"></script>
-    <script src="customElement.js"></script>
-    <script src="carousel.js"></script>
-    <script src="template.js"></script>
+   
 </body>
 
 </html>
