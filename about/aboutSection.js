@@ -1,147 +1,219 @@
-const template = document.createElement('template');
-template.innerHTML = `
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css">
-
-  <style>
-    :root { 
-      --background-color: #000000; 
-      --default-color: #fafafa;
-      --heading-color: #ffffff; 
-      --accent-color: #27a776; 
-      --contrast-color: #161718; 
-    }
-
-    section,
-    .section {
-      color: var(--default-color);
-      background-color: var(--background-color);
-      padding: 60px 0;
-      scroll-margin-top: 100px;
-      overflow: clip;
-      
-
-    }
-    
-
-    @media (max-width: 1199px) {
-      section,
-      .section {
-        scroll-margin-top: 66px;
-      }
-    }
-
-    @media (min-width: 992px) {
-      .col-lg-6 {
-          flex: 0 0 auto;
-          width: 50%;
-      }
-  }
-
-    .about .content h2 {
-      font-weight: 700;
-      font-size: 24px;      
-    }
-    .about img {
-     
-      margin-bottom: 15px;
-      
-    }
-    
-    .about .content ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    .about .content ul li {
-      margin-bottom: 20px;
-      display: flex;
-      align-items: center;
-    }
-
-    .about .content ul strong {
-      margin-right: 10px;
-    }
-
-    .about .content ul i {
-      font-size: 16px;
-      margin-right: 5px;
-      color: var(--accent-color);
-      line-height: 0;
-    }
-  </style>
-  <section id="about" class="about section">
-    <div class="container" data-aos="fade-up" data-aos-delay="100">
-      <div class="row gy-4 justify-content-center">
-        <div class="col-lg-4">
-          <img class="img-fluid" alt="">
-        </div>
-        <div class="col-lg-5 content">
-          <h2></h2>
-          <p class="fst-italic py-3"></p>
-          <div class="row">
-            <div class="col-lg-6">
-              <ul>
-                <li><i class="bi bi-chevron-right icon-verde"></i> <strong>Cumpleaños:</strong> <span></span></li>
-                <li><i class="bi bi-chevron-right icon-verde"></i> <strong>Web:</strong> <span></span></li>
-                <li><i class="bi bi-chevron-right icon-verde"></i> <strong>Teléfono:</strong> <span></span></li>
-                <li><i class="bi bi-chevron-right icon-verde"></i> <strong>Ciudad:</strong> <span></span></li>
-              </ul>
-            </div>
-            <div class="col-lg-6">
-              <ul>
-                <li><i class="bi bi-chevron-right icon-verde"></i> <strong>Edad:</strong> <span></span></li>
-                <li><i class="bi bi-chevron-right icon-verde"></i> <strong>Titulo:</strong> <span></span></li>
-                <li><i class="bi bi-chevron-right icon-verde"></i> <strong>Email:</strong> <span></span></li>
-                <li><i class="bi bi-chevron-right icon-verde"></i> <strong>Independiente:</strong> <span></span></li>
-              </ul>
-            </div>
-            <p class="py-3"></p>
-          </div>
-          <p class="m-0"></p>
-        </div>
-      </div>
-    </div>
-  </section>
-`;
-
 class AboutSection extends HTMLElement {
-  static get observedAttributes() {
-    return [
-      'image-src', 'heading', 'intro', 'birthday', 'website', 'phone', 'city', 
-      'age', 'degree', 'email', 'freelance', 'paragraph1', 'paragraph2'
-    ];
-  }
-
   constructor() {
     super();
-    this.attachShadow({ mode: 'open' });
-    this.shadowRoot.appendChild(template.content.cloneNode(true));
+    this.shadowDOM = this.attachShadow({ mode: 'open' });
   }
 
   connectedCallback() {
-    this.updateContent();
+    this.mapComponentAttributes();
+    this.render();
   }
 
-  attributeChangedCallback(name, oldValue, newValue) {
-    this.updateContent();
+  mapComponentAttributes() {
+    const attributeMapping = [
+      'image', 'heading', 'birthday', 'website', 'phone', 'city', 
+      'age', 'degree', 'email', 'freelance', 'paragraph1', 'paragraph2', 'paragraph3'
+    ];
+    attributeMapping.forEach(key => {
+      if (!this.attributes[key]) {
+        this.attributes[key] = { value: '' };
+      }
+    });
   }
 
-  updateContent() {
-    this.shadowRoot.querySelector('img').src = this.getAttribute('image-src') || '';
-    this.shadowRoot.querySelector('h2').textContent = this.getAttribute('heading') || '';
-    this.shadowRoot.querySelector('.fst-italic').textContent = this.getAttribute('intro') || '';
-    this.shadowRoot.querySelector('li:nth-child(1) span').textContent = this.getAttribute('birthday') || '';
-    this.shadowRoot.querySelector('li:nth-child(2) span').textContent = this.getAttribute('website') || '';
-    this.shadowRoot.querySelector('li:nth-child(3) span').textContent = this.getAttribute('phone') || '';
-    this.shadowRoot.querySelector('li:nth-child(4) span').textContent = this.getAttribute('city') || '';
-    this.shadowRoot.querySelector('div.col-lg-6:nth-child(2) li:nth-child(1) span').textContent = this.getAttribute('age') || '';
-    this.shadowRoot.querySelector('div.col-lg-6:nth-child(2) li:nth-child(2) span').textContent = this.getAttribute('degree') || '';
-    this.shadowRoot.querySelector('div.col-lg-6:nth-child(2) li:nth-child(3) span').textContent = this.getAttribute('email') || '';
-    this.shadowRoot.querySelector('div.col-lg-6:nth-child(2) li:nth-child(4) span').textContent = this.getAttribute('freelance') || '';
-    this.shadowRoot.querySelector('.py-3').textContent = this.getAttribute('paragraph1') || '';
-    this.shadowRoot.querySelector('.m-0').textContent = this.getAttribute('paragraph2') || '';
+  render() {
+    this.shadowDOM.innerHTML = `
+      ${this.templateCss()}
+      ${this.template()}
+    `;
+    
+  }
+
+  template() {
+    return `
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css">
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+      <section id="about" class="about section">
+        <div class="container" data-aos="fade-up" data-aos-delay="100">
+          <div class="row gy-4 justify-content-center">
+            <div class="col-lg-4">
+              <img src="${this.attributes.image.value}" class="img-fluid" alt="" id="profile-picture">
+            </div>
+            <div class="col-lg-6 content">
+              <h2 class="bounce">${this.attributes.heading.value}</h2>
+              <p class="py-3 bounce">${this.attributes.paragraph1.value}</p>
+              <div class="row">
+                <div class="col-lg-6">
+                  <ul class="bounce">
+                    <li><i class="bi bi-chevron-right icon-verde"></i> <strong>Cumpleaños:</strong> <span>${this.attributes.birthday.value}</span></li>
+                    <li><i class="bi bi-chevron-right icon-verde"></i> <strong>Web:</strong> <span>${this.attributes.website.value}</span></li>
+                    <li><i class="bi bi-chevron-right icon-verde"></i> <strong>Teléfono:</strong> <span>${this.attributes.phone.value}</span></li>
+                    <li><i class="bi bi-chevron-right icon-verde"></i> <strong>Ciudad:</strong> <span>${this.attributes.city.value}</span></li>
+                  </ul>
+                </div>
+                <div class="col-lg-6">
+                  <ul  class="bounce">
+                    <li><i class="bi bi-chevron-right icon-verde"></i> <strong>Edad:</strong> <span>${this.attributes.age.value}</span></li>
+                    <li><i class="bi bi-chevron-right icon-verde"></i> <strong>Titulo:</strong> <span>${this.attributes.degree.value}</span></li>
+                    <li><i class="bi bi-chevron-right icon-verde"></i> <strong>Email:</strong> <span>${this.attributes.email.value}</span></li>
+                    <li><i class="bi bi-chevron-right icon-verde"></i> <strong>Independiente:</strong> <span>${this.attributes.freelance.value}</span></li>
+                  </ul>
+                </div>
+              </div>
+              <p class="m-0 bounce">${this.attributes.paragraph3.value}</p>
+              <p class="m-0 bounce">${this.attributes.paragraph2.value}</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    `;
+  }
+
+  templateCss() {
+    return `
+      <style>
+        :root { 
+          --background-color: #000000; 
+          --default-color: #fafafa;
+          --heading-color: #ffffff; 
+          --accent-color: #27a776; 
+          --contrast-color: #161718; 
+        }
+
+        section,
+        .section {
+          color: var(--default-color);
+          background-color: var(--background-color);
+          padding: 60px 0;
+          scroll-margin-top: 100px;
+          overflow: clip;
+        }
+
+        @media (max-width: 1199px) {
+          section,
+          .section {
+            scroll-margin-top: 66px;
+          }
+        }
+
+        @media (min-width: 992px) {
+          .col-lg-6 {
+            flex: 0 0 auto;
+            width: 50%;
+          }
+        }
+
+        .about .content h2 {
+          font-weight: 700;
+          font-size: 24px; 
+          margin-left: 0%; 
+          transition: margin-left 0.5s ease-in-out; 
+        }
+        
+        .about img {
+          margin-bottom: 15px;
+          max-height: auto;
+          max-width: 90%;
+          margin-left: 10%;
+          transition: transform 0.3s ease; /* Transición para la transformación */
+        }
+        
+        .about img:hover {
+          transform: scale(1.05); /* Agrandar la imagen al pasar el cursor sobre ella */
+        }
+
+        .about p {
+          padding: 10px;
+          transition: background-color 0.5s ease; /* Transición para el cambio de color de fondo */
+        }
+
+        .about .content ul {
+          list-style: none;
+          padding: 0;
+        }
+
+        .about .content ul li {
+          margin-bottom: 20px;
+          display: flex;
+          align-items: center;
+          transition: background-color 0.5s ease; /* Transición para el cambio de color de fondo */
+        }
+
+        .about .content ul strong {
+          margin-right: 10px;
+        }
+
+        .about .content ul i {
+          font-size: 16px;
+          margin-right: 5px;
+          color: var(--accent-color);
+          line-height: 0;
+        }
+        /* Animación de rebote */
+        @keyframes bounce {
+          0%, 20%, 50%, 80%, 100% {
+            transform: translateY(0);
+          }
+          40% {
+            transform: translateY(-10px); /* Cambiar el valor de la altura del rebote */
+          }
+          60% {
+            transform: translateY(-3px); /* Cambiar el valor de la altura del rebote */
+          }
+        }
+        
+        .bounce {
+          transition: transform 0.3s ease; /* Transición suave */
+        }
+        
+        .bounce:hover {
+          animation: bounce 1s infinite; /* Aplicando la animación de rebote al pasar el cursor */
+        }
+        
+
+      </style>
+    `;
+  }
+
+  addMouseOverEvents() {
+    const paragraphs = this.shadowDOM.querySelectorAll('p');
+    const headings = this.shadowDOM.querySelectorAll('h2');
+    const listItems = this.shadowDOM.querySelectorAll('li');
+
+    paragraphs.forEach(paragraph => {
+      paragraph.addEventListener('mouseover', () => {
+        paragraph.classList.add('bounce');
+      });
+      paragraph.addEventListener('mouseout', () => {
+        paragraph.classList.remove('bounce');
+      });
+    });
+
+    headings.forEach(heading => {
+      heading.addEventListener('mouseover', () => {
+        heading.classList.add('bounce');
+      });
+      heading.addEventListener('mouseout', () => {
+        heading.classList.remove('bounce');
+      });
+    });
+
+    listItems.forEach(listItem => {
+      listItem.addEventListener('mouseover', () => {
+        listItem.classList.add('bounce');
+      });
+      listItem.addEventListener('mouseout', () => {
+        listItem.classList.remove('bounce');
+      });
+    });
+  }
+
+  disconnectedCallback() {
+    this.remove();
   }
 }
 
 customElements.define('about-section', AboutSection);
+

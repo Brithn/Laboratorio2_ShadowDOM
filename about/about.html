@@ -8,7 +8,8 @@
 
 
     <script src="customElements.js"></script>
-    <script src="shadowDOM.js" defer></script>
+    <script src="template.js" defer></script>
+    <script src="import.js" type="module"></script>
     <link rel="stylesheet" href="style.css">
 
 
@@ -25,31 +26,67 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css">
 
 
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+        <link rel="stylesheet" href="styleCarru.css">
+
     <style>
-     
      
         .content {
             padding-bottom: .75rem;
             padding-top: .75rem;
             background-color: black;
         }
-
-        
-
-        .carru {
-            font-family: 'Poppins', sans-serif;
-
-            display: flex;
-            justify-content: center;
-            background-color: #000;
-        }
-
        
     </style>
 
 </head>
 
 <body>
+
+    <template id="scrollTopBtn">
+        <style>
+          :host {
+            --btn-size: 50px;
+            --btn-color: #27a776;
+            --btn-position: 20px;
+              
+          }
+          .scroll-top {
+            position: fixed;
+            bottom: var(--btn-position);
+            right: var(--btn-position);
+            width: var(--btn-size);
+            height: var(--btn-size);
+            background-color: var(--btn-color);
+            border-radius: 50%;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            z-index: 9999;
+            transition: background-color 0.3s ease;
+          }
+          .scroll-top.active {
+            display: flex;
+          }
+          .scroll-top img {
+            width: 40%;
+            height: 40%;
+          }
+      .scroll-top:hover {
+        background-color: #1b7a5c;
+      }
+        
+        </style>
+        <div class="scroll-top">
+          <img src="../img/arrow2.svg" alt="up">
+        </div>
+      </template>
+    
+      <scroll-top-button></scroll-top-button>
+
+
     <div class="content">
         <header-element logo-text="PhotoFolio" background-color="#000000" link1-text="Inicio"
             link1-href="../Home/home.html" link2-text="Servicios" link2-href="../Services/services.html"
@@ -71,24 +108,26 @@
 
 
      
-     <breadcrumb-nav>
+    <breadcrumb-nav separator="/">
+        
         <li><a href="../home/home.html">Inicio</a></li>
         <li>Sobre Nosotros</li>
     </breadcrumb-nav>
-    
-
    
 
 
   
 
-        <about-section image-src="../img/img.jpg"
-            heading="Fotógrafa Profesional" birthday="15/08/1987"
-            website="www.emilyjoh.com" phone="+15551234567" city="New York" age="30" degree="Licenciada"
-            email="info@emilyjohnson.com" freelance="Disponible"
-            paragraph1="¡Hola! Soy Emily Johnson, una fotógrafa profesional con sede en la vibrante ciudad de Nueva York. Con una pasión por capturar momentos auténticos y emociones genuinas, me especializo en retratos, fotografía de bodas y fotografía de estilo de vida."
-            paragraph2="No puedo esperar para conectarme contigo y ayudarte a capturar momentos que perdurarán para siempre. Ya sea que estés planeando una sesión de fotos íntima o una boda extravagante, ¡estoy aquí para hacer realidad tus visiones fotográficas!">
-        </about-section>
+    <about-section image="../img/img.jpg"
+    heading="Fotógrafa Profesional" birthday="15/08/1987"
+    website="www.emilyjoh.com" phone="+15551234567" city="New York" age="30" degree="Licenciada"
+    email="info@emilyjohnson.com" freelance="Disponible"
+    paragraph1="¡Hola! Soy Emily Johnson, una fotógrafa profesional con sede en la vibrante ciudad de Nueva York. Con una pasión por capturar momentos auténticos y emociones genuinas, me especializo en retratos, fotografía de bodas y fotografía de estilo de vida."
+    paragraph2="No puedo esperar para conectarme contigo y ayudarte a capturar momentos que perdurarán para siempre. Ya sea que estés planeando una sesión de fotos íntima o una boda extravagante, ¡estoy aquí para hacer realidad tus visiones fotográficas!"
+    paragraph3="Mi trayectoria como fotógrafa profesional se ha definido por mi dedicación a capturar la esencia de cada momento. Desde las risas espontáneas hasta los gestos más sutiles, mi objetivo es inmortalizar la belleza y la autenticidad en cada imagen que creo. Con una formación académica sólida y años de experiencia en el campo, he perfeccionado mi arte para ofrecer a mis clientes resultados excepcionales. ">
+
+</about-section>
+
   
 
 
@@ -101,29 +140,33 @@
 
 
 
-    <div class="carru">
-        <testimonials-carousel>
-            <testimonial-slide
-                text="¡Increíble experiencia con Emily! Sus habilidades para capturar momentos son excepcionales. ¡Estamos encantados con nuestras fotos de boda y no podríamos haber pedido un mejor fotógrafo!"
-                author="Kiara Carvajal" image="../img/kiara.jpg"></testimonial-slide>
-            <testimonial-slide
-                text="Emily es simplemente asombrosa. No solo tiene un talento innato para la fotografía, sino que también tiene una manera increíble de hacer que te sientas cómodo frente a la cámara. ¡Altamente recomendada!"
-                author="Mishell Castellano" image="../img/mishell.jpg"></testimonial-slide>
-            <testimonial-slide
-                text="Desde la sesión de fotos hasta la entrega final, Emily fue profesional y amigable. Nos guió a través de cada paso del proceso y nos proporcionó fotos impresionantes que atesoraremos para siempre. ¡Gracias, Emily!t"
-                author="Steven Floril" image="../img/steven.jpg"></testimonial-slide>
-            <testimonial-slide
-                text="Emily realmente capturó la esencia de nuestra familia en cada foto. Estamos absolutamente enamorados de su trabajo y no podemos esperar para trabajar con ella nuevamente en el futuro."
-                author="Brithney Salazar" image="../img/steven.jpg"></testimonial-slide>
-        </testimonials-carousel>
-
-    </div>
-
-
-
-
-
-
+        <testimonial-carousel>
+            <testimonial-item 
+              img="../img/brithney.png"
+              name="Brithney Salazar" 
+              title="Especialista en Marketing" 
+              text="“ Emily realmente capturó la esencia de nuestra familia en cada foto. Estamos absolutamente enamorados de su trabajo y no podemos esperar para trabajar con ella nuevamente en el futuro. ”">
+            </testimonial-item>
+            <testimonial-item 
+              img="../img/mishell.jpg"
+              name="Mishell Castellano" 
+              title="Diseñadora" 
+              text="“ Emily es simplemente asombrosa. No solo tiene un talento innato para la fotografía, sino que también tiene una manera increíble de hacer que te sientas cómodo frente a la cámara. ¡Altamente recomendada! ”">
+            </testimonial-item>
+            <testimonial-item 
+              img="../img/steven.jpg"
+              name="Steven Floril" 
+              title="Planificador de Eventos" 
+              text="“ Desde la sesión de fotos hasta la entrega final, Emily fue profesional y amigable. Nos guió a través de cada paso del proceso y nos proporcionó fotos impresionantes que atesoraremos para siempre. ¡Gracias, Emily! ”">
+            </testimonial-item>
+            <testimonial-item 
+              img="../img/kiara.jpg"
+              name="Kiara Carvajal" 
+              title="Creadora de Contenido" 
+              text="“ ¡Increíble experiencia con Emily! Sus habilidades para capturar momentos son excepcionales. ¡Estamos encantados con nuestras fotos de boda y no podríamos haber pedido un mejor fotógrafo! ”">
+            </testimonial-item>
+          </testimonial-carousel>
+        
 
 
     <footer-element footer-text="   PhotoFolio   " icon1-class="fab fa-facebook-f" icon1-href="https://facebook.com"
@@ -134,19 +177,10 @@
 
 
 
-
-
-
-
-
-
-
- 
-
     <script src="aboutSection.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
     <script src="carousel.js"></script>
-
-
 
 </body>
 

@@ -43,6 +43,11 @@ class CustomSectionTitle extends HTMLElement {
           display: inline-block;
           background: var(--accent-color);
           margin: 4px 10px;
+          position: absolute;
+          bottom: 9px; /* Posiciona el círculo en el centro vertical */
+          border-radius: 50%; /* Hace que la línea sea redonda */
+          animation: colorShift 5s infinite; /* Aplica la animación de desplazamiento de color */
+          transform-origin: center;
           
         }
         .section-title p {
@@ -54,6 +59,20 @@ class CustomSectionTitle extends HTMLElement {
           font-family: 'Poppins', sans-serif;
           margin-right: 20px;
         }
+
+        @keyframes colorShift {
+          0% {
+            background-color: var(--accent-color);
+          }
+          50% {
+            background-color: white;
+          }
+          100% {
+            background-color: var(--accent-color);
+          }
+        }
+        
+        
       </style>
       <div class="container section-title" data-aos="fade-up">
         <h2></h2>
