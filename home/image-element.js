@@ -1,4 +1,4 @@
-//Shadow para module
+// image-card-element.js
 export class ImageCardElement extends HTMLElement {
     constructor() {
         super();
@@ -18,6 +18,9 @@ export class ImageCardElement extends HTMLElement {
     }
 
     render() {
+        const imgSrc = this.getAttribute('img-src');
+        const absoluteImgSrc = new URL(imgSrc, import.meta.url).href; // Convierte la ruta a absoluta
+
         this.shadowRoot.innerHTML = `
             <style>
                 .galeria {
@@ -68,7 +71,7 @@ export class ImageCardElement extends HTMLElement {
             </style>
             <div class="galeria">
                 <a href="${this.getAttribute('href')}" target="_blank">
-                    <img src="${this.getAttribute('img-src')}" alt="Image">
+                    <img src="${absoluteImgSrc}" alt="Image">
                     <div class="overlay"></div>
                 </a>
             </div>

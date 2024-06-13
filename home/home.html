@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="../css/style.css">
     <script src="../services/template.js"></script>
     <script src="../about/template.js" defer></script>
+    <link rel="stylesheet" href="../css/styleServices.css">
 </head>
 <style>
     .gallery-container {
@@ -69,7 +70,6 @@
     <!-------------------------------------->
 
     <div class="content">
-
         <!-- Encabezado Shadow DOM-->
         <header-element logo-text="PhotoFolio" background-color="#000000" link1-text="Inicio"
             link1-href="../home/home.html" link2-text="Servicios" link2-href="../Services/services.html"
@@ -90,18 +90,28 @@
             </div>
             <div class="gallery-container">
                 <!-- Galleria de imagenes ES Modules -->
-                <image-card href="../gallery/gallery.html"
-                    img-src="https://www.sony.com.ec/image/bc6d25fa6371c2899ce704a2bed7614c?fmt=png-alpha&wid=960"></image-card>
                 <image-card
+                    img-src="https://www.lieben.no/wp-content/uploads/2018/03/sleepy.jpg"></image-card>
+                <image-card
+                    img-src="https://www.lieben.no/wp-content/uploads/2018/03/maria4-710x1065.jpg"></image-card>
+                <image-card
+                    img-src="https://www.lieben.no/wp-content/uploads/2018/03/320.jpg"></image-card>
+                <image-card
+                    img-src="https://images.squarespace-cdn.com/content/v1/5fcfcd6008d60137e9f93e1f/f9676a50-a72e-4d9a-8b8e-156c4eda977d/IMG_0176.jpg?format=1500w"></image-card>
+                <image-card href="../gallery/gallery.html"
+                    img-src="https://www.lieben.no/wp-content/uploads/2018/03/famespegard-13.jpg"></image-card>
+                <image-card
+                    href="../gallery/gallery.html"
                     img-src="https://images.pexels.com/photos/209339/pexels-photo-209339.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"></image-card>
                 <image-card
+                    href="../gallery/gallery.html"
                     img-src="https://img.freepik.com/fotos-premium/fresa-es-fruta-familia-rosaceas_733217-364.jpg?w=740"></image-card>
                 <image-card
                     img-src="https://img.freepik.com/fotos-premium/medusas-nadando-oceano_733217-176.jpg?w=740"></image-card>
                 <image-card
                     img-src="https://img.freepik.com/fotos-premium/pastel-queso-quemado-aislado-fondo-borroso_733217-137.jpg?w=740"></image-card>
                 <image-card
-                    img-src="https://img.freepik.com/fotos-premium/monton-diferentes-tipos-datiles-mezclados-linterna-hoja-puntos-enfoque-selectivo_733217-46.jpg?size=626&ext=jpg"></image-card>
+                    img-src="https://www.lieben.no/wp-content/uploads/2019/03/lieben_union%C3%B8ye_0032-743x495.jpg"></image-card>
                 <image-card
                     img-src="https://img.freepik.com/fotos-premium/hermosa-vista-playa_733217-37.jpg?w=740"></image-card>
                 <image-card
@@ -110,12 +120,32 @@
             </div>
         </section>
     </div>
-    
+
+    <!-- etiqueta rutilizada -->
+
+    <testimonial-carousel>
+        <testimonial-item img="../img/brithney.png" name="Brithney Salazar" title="Especialista en Marketing"
+            text="“ Emily realmente capturó la esencia de nuestra familia en cada foto. Estamos absolutamente enamorados de su trabajo y no podemos esperar para trabajar con ella nuevamente en el futuro. ”">
+        </testimonial-item>
+        <testimonial-item img="../img/mishell.jpg" name="Mishell Castellano" title="Diseñadora"
+            text="“ Emily es simplemente asombrosa. No solo tiene un talento innato para la fotografía, sino que también tiene una manera increíble de hacer que te sientas cómodo frente a la cámara. ¡Altamente recomendada! ”">
+        </testimonial-item>
+        <testimonial-item img="../img/steven.jpg" name="Steven Floril" title="Planificador de Eventos"
+            text="“ Desde la sesión de fotos hasta la entrega final, Emily fue profesional y amigable. Nos guió a través de cada paso del proceso y nos proporcionó fotos impresionantes que atesoraremos para siempre. ¡Gracias, Emily! ”">
+        </testimonial-item>
+        <testimonial-item img="../img/kiara.jpg" name="Kiara Carvajal" title="Creadora de Contenido"
+            text="“ ¡Increíble experiencia con Emily! Sus habilidades para capturar momentos son excepcionales. ¡Estamos encantados con nuestras fotos de boda y no podríamos haber pedido un mejor fotógrafo! ”">
+        </testimonial-item>
+    </testimonial-carousel>
+
+
+
 
     <!-- Footer Template -->
     <template id="footer-template">
         <style>
             @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css');
+
             .footer {
                 background-color: #000;
                 color: #fff;
@@ -160,6 +190,7 @@
     <footer-container></footer-container>
 
     <!-- Scripts -->
+    <script src="../about/carousel.js"></script>
     <script src="../home/header-element.js"></script>
     <script src="../home/presentacion-element.js"></script>
     <script src="../home/footer.js"></script>

@@ -109,6 +109,34 @@ document.addEventListener('DOMContentLoaded', () => {
                     .social-icons a:hover {
                         color: #27a776;
                     }
+                     @media (max-width: 768px) {
+                        header {
+                            
+                            flex-direction: column;
+                        }
+                        nav {
+                            margin-top: 10px;
+                        }
+                        nav a {
+                            margin: 5px 10px;
+                        }
+                        .social-icons {
+                            margin-top: 10px;
+                        }
+                    }
+
+                    @media (max-width: 480px) {
+                    
+                        .logo {
+                            font-size: 1.2em;
+                        }
+                        nav a {
+                            font-size: 1em;
+                        }
+                        .social-icons a {
+                            font-size: 1.2rem;
+                        }
+                    }
                 </style>
             `;
         }

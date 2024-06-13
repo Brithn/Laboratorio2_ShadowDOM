@@ -2,7 +2,7 @@ class CustomElement extends HTMLElement {
   connectedCallback() {
       this.innerHTML = `
           <section class="hero">
-              <h1>Galeria </h1>
+              <h1>Galería</h1>
               <p>
                  En una galería bulliciosa, el arte y la vida se entrelazan en una danza de colores y formas.
                   Cada obra cuenta una historia, susurra un secreto o despierta una emoción dormida. 
