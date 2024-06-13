@@ -19,6 +19,7 @@
     <script src="carousel.js"></script>
     <script src="template.js"></script>
     <script src="showDom.js"></script>
+    <script type="module" src="import.js"></script>
 
 
     <style>
@@ -34,7 +35,7 @@
 
 <body>
 
-
+    <!-- Encabezado -->
     <div class="content">
         <header-element logo-text="PhotoFolio" background-color="#000000" link1-text="Home"
             link1-href="../home/home.html" link2-text="Services" link2-href="../Services/services.html"
@@ -47,19 +48,12 @@
 
       <!--CUSTOM ELEMENT-->
     <custom-element> </custom-element>
-
     <!--ES MODULE-->
-  
         <image-carousel>
             <img src="Imagen1.jpg" alt="Image 1">
             <img src="Imagen2.jpg" alt="Image 2">
             <img src="Imagen3.jpg" alt="Image 3">
           </image-carousel>
-        
-   
-      
-
-
    <!--TEMPLATE-->
     <template id="portfolioDetailsTemplate">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -74,11 +68,6 @@
                 border-radius: 5px;
                 box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
                 margin-bottom: 20px;
-            }
-
-            .portfolio-details {
-
-                
             }
 
             .portfolio-details h1 {
@@ -208,26 +197,17 @@
   <!--SHADOW DOM-->
     <section >
         <testimonial-section 
-        quote="Export tempor illum tamen malis malis eram quae irure esse labore..."
+        quote="El diseño no es solo sobre cómo se ve y se siente. El diseño es sobre cómo funciona.."
         image="Imagen4.jpg" 
-        name="Sara Wilsson" 
+        name="Steve Jobs" 
         title="Designer">
       </testimonial-section>
     </section>
-
-
 
     <footer-element footer-text="PhotoFolio" icon1-class="fab fa-facebook-f" icon1-href="https://facebook.com"
         icon2-class="fab fa-twitter" icon2-href="https://twitter.com" icon3-class="fab fa-instagram"
         icon3-href="https://instagram.com" icon4-class="fab fa-linkedin-in" icon4-href="https://linkedin.com">
     </footer-element>
-
-
-
-
-
-    <script type="module" src="import.js"></script>
-
 </body>
 
 </html>
