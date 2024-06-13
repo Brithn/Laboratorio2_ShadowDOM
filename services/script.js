@@ -25,5 +25,5 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
-import { actualizarImagen, posicionCarrusel } from './ESModules.js';
+import { actualizarImagen, posicionCarrusel } from '../services/ESModules.js';
 
