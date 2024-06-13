@@ -18,10 +18,24 @@
     <script src="customElement.js"></script>
     <script src="carousel.js"></script>
     <script src="template.js"></script>
+    <script src="showDom.js"></script>
+
+    <script type="module" src="main.js"></script>
+
     <dark-mode-toggle></dark-mode-toggle>
+
+
+    <style>
+        .content {
+            padding-bottom: .75rem;
+            padding-top: .75rem;
+        }
+    </style>
 </head>
 
 <body>
+
+
     <div class="content">
         <header-element logo-text="PhotoFolio" background-color="#000000" link1-text="Home"
             link1-href="../home/home.html" link2-text="Services" link2-href="../Services/services.html"
@@ -30,131 +44,145 @@
             icon2-class="fab fa-twitter" icon2-href="https://twitter.com" icon3-class="fab fa-instagram"
             icon3-href="https://instagram.com" icon4-class="fab fa-linkedin-in" icon4-href="https://linkedin.com">
         </header-element>
+    </div>
 
-        <custom-element> </custom-element>
+      <!--CUSTOM ELEMENT-->
+    <custom-element> </custom-element>
+
+      <!--ES MODULE-->
+    <image-carousel></image-carousel>
 
 
-        <section class="gallery">
-            <image-carousel></image-carousel>
 
-            <template id="portfolioDetailsTemplate">
-                <style>
-                    .container {
-                        display: flex;
-                        justify-content: space-between;
-                        padding: 20px;
-                        background-color: #000;
-                     
-                        border-radius: 5px;
-                        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-                        margin-bottom: 20px;
-                    }
-            
-                    .portfolio-details {
-                        width: 70%;
-                    }
-            
-                    .portfolio-details h1 {
-                        font-size: 2.5em;
-                        color: #fff;
-                        margin-bottom: 10px;
-                    }
-            
-                    .portfolio-details p {
-                        color: #fff;
-                        font-size: 1.2em;
-                    }
-            
-                    .testimonial {
-                        margin-top: 20px;
-                        padding: 10px;
-                        background-color: #fff;
-                        border-radius: 5px;
-                    }
-            
-                    .testimonial .quote {
-                        font-style: italic;
-                        color: #888;
-                    }
-            
-                    .testimonial .author {
-                        display: flex;
-                        align-items: center;
-                        margin-top: 10px;
-                    }
-            
-                    .testimonial .author img {
-                        width: 40px;
-                        height: 40px;
-                        border-radius: 50%;
-                        margin-right: 10px;
-                    }
-            
-                    .testimonial .author h4 {
-                        font-size: 18px;
-                        color: #333;
-                        margin: 0;
-                    }
-            
-                    .testimonial .author p {
-                        color: #666;
-                        margin: 0;
-                    }
-            
-                    .project-information {
-                        width: 25%;
-                        padding: 10px;
-                        background-color: #fff;
-                        border-radius: 5px;
-                        height: 25%;
-                    }
-            
-                    .project-information h2 {
-                        font-size: 20px;
-                        color: #333;
-                        margin-bottom: 10px;
-                    }
-            
-                    .project-information ul {
-                        padding-left: 20px;
-                    }
-            
-                    .project-information li {
-                        color: #666;
-                    }
-            
-                    .project-information a.button {
-                        display: inline-block;
-                        padding: 10px 20px;
-                        background-color: #007bff;
-                        color: #fff;
-                        text-decoration: none;
-                        border-radius: 5px;
-                        margin-top: 10px;
-                    }
-            
-                    .project-information a.button:hover {
-                        background-color: #0056b3;
-                    }
-                </style>
-                <div class="container">
+   <!--TEMPLATE-->
+    <template id="portfolioDetailsTemplate">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <style>
+            .container {
+                display: flex;
+                justify-content: space-between;
+                padding: 20px;
+                background-color: #000;
+
+                border-radius: 5px;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                margin-bottom: 20px;
+            }
+
+            .portfolio-details {
+
+                
+            }
+
+            .portfolio-details h1 {
+                font-size: 2.5em;
+                color: #fff;
+                margin-bottom: 10px;
+            }
+
+            .portfolio-details p {
+                color: #fff;
+                font-size: 1.2em;
+            }
+
+            .testimonial {
+                margin-top: 20px;
+                padding: 10px;
+                background-color: #fff;
+                border-radius: 5px;
+            }
+
+            .testimonial .quote {
+                font-style: italic;
+                color: #888;
+            }
+
+            .testimonial .author {
+                display: flex;
+                align-items: center;
+                margin-top: 10px;
+            }
+
+            .testimonial .author img {
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                margin-right: 10px;
+            }
+
+            .testimonial .author h4 {
+                font-size: 18px;
+                color: #333;
+                margin: 0;
+            }
+
+            .testimonial .author p {
+                color: #666;
+                margin: 0;
+            }
+
+            .project-information {
+               
+                padding: 10px;
+                background-color: #fff;
+                border-radius: 5px;
+                margin-left: 20px;
+                margin-right: 20px;
+                margin-top: 10px;
+                margin-bottom: 10px;
+              
+            }
+
+            .project-information h2 {
+                font-size: 20px;
+                color: #333;
+                margin-bottom: 10px;
+                text-align: center;
+            }
+
+            .project-information ul {
+                padding-left: 20px;
+            }
+
+            .project-information li {
+                color: #666;
+            }
+
+            .project-information a.button {
+                display: inline-block;
+                padding: 10px 20px;
+                background-color: #007bff;
+                color: #fff;
+                text-decoration: none;
+                border-radius: 5px;
+                margin-top: 10px;
+            }
+
+            .project-information a.button:hover {
+                background-color: #0056b3;
+            }
+        </style>
+        <div class="container">
+            <div class="row">
+                <div class="col-8">
+
                     <div class="portfolio-details">
                         <h1>Detalle</h1>
-                        <p>La fotografía es mucho más que la simple captura de imágenes; es una poderosa forma de expresión artística que nos permite explorar el mundo que nos rodea de manera única. A través del lente de una cámara, los fotógrafos pueden revelar la belleza oculta en los momentos cotidianos, transmitir emociones profundas y contar historias que trascienden las barreras del tiempo y el espacio.</p>
-                        <p>En nuestra era digital, la fotografía se ha convertido en un medio omnipresente que nos conecta con el mundo de una manera íntima y significativa. Ya sea documentando momentos importantes en nuestras vidas, capturando la majestuosidad de la naturaleza o explorando los rincones más remotos del planeta, cada imagen cuenta una historia única y nos invita a reflexionar sobre nuestro lugar en el universo.</p>
-                        
-                        <div class="testimonial">
-                            <p class="quote">"Export tempor illum tamen malis malis eram quae irure esse labore..."</p>
-                            <div class="author">
-                                <img src="Imagen4.jpg" alt="Sara Wilsson">
-                                <div class="author-info">
-                                    <h4>Sara Wilsson</h4>
-                                    <p>Designer</p>
-                                </div>
-                            </div>
-                        </div>
+                        <p>La fotografía es mucho más que la simple captura de imágenes; es una poderosa forma de
+                            expresión artística que nos permite explorar el mundo que nos rodea de manera única. A
+                            través del lente de una cámara, los fotógrafos pueden revelar la belleza oculta en los
+                            momentos cotidianos, transmitir emociones profundas y contar historias que trascienden las
+                            barreras del tiempo y el espacio.</p>
+                        <p>En nuestra era digital, la fotografía se ha convertido en un medio omnipresente que nos
+                            conecta con el mundo de una manera íntima y significativa. Ya sea documentando momentos
+                            importantes en nuestras vidas, capturando la majestuosidad de la naturaleza o explorando los
+                            rincones más remotos del planeta, cada imagen cuenta una historia única y nos invita a
+                            reflexionar sobre nuestro lugar en el universo.</p>
                     </div>
-                    
+                </div>
+
+                <div class="col-4">
                     <div class="project-information">
                         <h2>Project information</h2>
                         <ul>
@@ -165,20 +193,31 @@
                         </ul>
                         <a href="http://www.example.com" class="button">Visit Website</a>
                     </div>
-                </div>
-            </template>
 
-            <template-section> </template-section>
-        </section>
-    </div>
-   
+                </div>
+
+            </div>
+        </div>
+
+
+    </template>
+    <template-section> </template-section>
+
+  <!--SHADOW DOM-->
+    <section class="gallery">
+        <testimonial-section quote="Export tempor illum tamen malis malis eram quae irure esse labore..."
+            image="Imagen4.jpg" name="Sara Wilsson" title="Designer">
+        </testimonial-section>
+    </section>
+
+
 
     <footer-element footer-text="PhotoFolio" icon1-class="fab fa-facebook-f" icon1-href="https://facebook.com"
         icon2-class="fab fa-twitter" icon2-href="https://twitter.com" icon3-class="fab fa-instagram"
         icon3-href="https://instagram.com" icon4-class="fab fa-linkedin-in" icon4-href="https://linkedin.com">
     </footer-element>
 
-   
+
 </body>
 
 </html>

@@ -13,7 +13,7 @@ class CustomElement extends HTMLElement {
               </p>
           </section>
           <section class="breadcrumb">
-              <p>Inicio / informacion fotofrafia</p>
+              <p>Inicio / informacion fotografia</p>
           </section>
       `;
   }

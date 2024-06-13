@@ -1,4 +1,5 @@
-class ImageCarousel extends HTMLElement {
+// Exporta la clase ImageCarousel como un módulo ES
+export class ImageCarousel extends HTMLElement {
     constructor() {
         super();
         this.attachShadow({ mode: 'open' });
@@ -19,7 +20,7 @@ class ImageCarousel extends HTMLElement {
         const imageElements = images.map(image => `<img src="${image.src}" alt="${image.alt}">`).join('');
 
         this.shadowRoot.innerHTML = `
-           <style>
+            <style>
                 :host {
                     display: block;
                     position: relative;
@@ -104,4 +105,5 @@ class ImageCarousel extends HTMLElement {
     }
 }
 
+// Define the custom element
 customElements.define('image-carousel', ImageCarousel);
