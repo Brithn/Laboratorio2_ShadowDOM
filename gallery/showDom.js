@@ -29,6 +29,7 @@ class TestimonialSection extends HTMLElement {
           :host {
             font-family: Arial, sans-serif;
             display: block;
+             text-align: center;
           }
           .testimonial {
             padding: 1rem;
@@ -37,14 +38,11 @@ class TestimonialSection extends HTMLElement {
             background-color: #f9f9f9;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
             transition: box-shadow 0.3s ease; /* Transición suave */
-            }
-
-            .testimonial:hover {
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada al pasar el mouse */
+             text-align: center;
             }
 
             .testimonial img {
-            width: 50px; /* Ajusta el tamaño de la imagen según sea necesario */
+            width: 60px; /* Ajusta el tamaño de la imagen según sea necesario */
             height: 50px;
             border-radius: 50%; /* Forma circular para la imagen */
             margin-right: 0.5rem; /* Espaciado entre la imagen y el texto */
@@ -57,6 +55,7 @@ class TestimonialSection extends HTMLElement {
           .author {
             display: flex;
             align-items: center;
+            text-align: center;
           }
           .author img {
             border-radius: 50%;
