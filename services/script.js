@@ -25,5 +25,4 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
-import { actualizarImagen, posicionCarrusel } from '../services/ESModules.js';
 

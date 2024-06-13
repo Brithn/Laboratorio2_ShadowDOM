@@ -1,15 +1,16 @@
-h3{
+h3 {
     color: #ffffff;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
 .container {
     display: flex;
     justify-content: center;
-    align-items: flex-start; /* Alinea los elementos en la parte superior */
-    padding: 20px; /* Añade un poco de relleno para que no quede pegado a los bordes */
-    margin-top: 20px; /* Añade un margen superior para separar del header */
+    align-items: flex-start;
+    padding: 20px;
+    margin-top: 20px;
 }
 
 .card-container {
@@ -17,10 +18,11 @@ h3{
     justify-content: center;
     align-items: flex-start;
     flex-wrap: wrap;
-    gap: 20px; 
+    gap: 20px;
     padding: 20px;
-    width: 100%; 
+    width: 100%;
 }
+
 .pricing-section {
     padding: 25px 0;
     background-color: #000000;
@@ -36,7 +38,7 @@ h3{
 
 .pricing-container {
     background-color: rgb(0, 0, 0);
-    border: 1px solid#27a776;
+    border: 1px solid #27a776;
     border-radius: 10px;
     padding: 20px;
     margin: 10px auto;
@@ -106,17 +108,17 @@ body {
 }
 
 .carrusel-container {
-    width: 80vw;  /* Reducimos el ancho a 80% del viewport */
-    height: 60vh;  /* Reducimos la altura a 60% del viewport */
+    width: 80vw;
+    height: 60vh;
     background-color: #000000;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding-top: 20px;  /* Reducimos el padding superior */
+    padding-top: 20px;
     overflow: hidden;
-    margin: auto;  /* Centramos el carrusel en la página */
-    border-radius: 15px;  /* Añadimos un borde redondeado al contenedor */
+    margin: auto;
+    border-radius: 15px;
 }
 
 .carrusel {
@@ -130,15 +132,15 @@ body {
 
 .atras, .adelante {
     cursor: pointer;
-    color: white;  /* Hacemos las flechas blancas */
-    font-size: 2em;  /* Ajustamos el tamaño de las flechas */
+    color: white;
+    font-size: 2em;
     padding: 10px;
-    background: rgba(0, 0, 0, 0.5);  /* Fondo semitransparente */
+    background: rgba(0, 0, 0, 0.5);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 10px;  /* Margen para separar las flechas del contenido */
+    margin: 0 10px;
 }
 
 .imagenes {
@@ -146,66 +148,67 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    position: relative;  /* Cambiamos a relativo para posicionar el texto */
+    position: relative;
 }
 
 .img {
     box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.85);
-    height: 40vh;  /* Altura fija */
-    width: 60vw;  /* Ancho fijo */
+    height: 40vh;
+    width: 60vw;
     border-radius: 15px;
     margin: 5px;
-    object-fit: cover;  /* Asegura que la imagen cubra el contenedor */
+    object-fit: cover;
     filter: saturate(175%);
 }
 
 .texto {
     overflow: hidden;
     position: absolute;
-    bottom: 10px;  /* Posicionamos el texto en la parte inferior de la imagen */
+    bottom: 10px;
     flex-direction: column;
     transform: translateY(0px);
     margin-bottom: 9px;
     backdrop-filter: blur(20px);
-    background-color: rgba(63, 106, 138, 0.21);
+    background-color: rgba(63, 106, 138
+    .21);
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 30px;
-    width: 90%;  /* Ajustamos el ancho del texto al 90% de la imagen */
+    width: 90%;
 }
 
 .texto h3 {
     text-shadow: 0px 0px 15px black;
-    padding-top: 10px;  /* Reducimos el padding superior */
+    padding-top: 10px;
     color: white;
     font-weight: 300;
-    font-size: 20px;  /* Reducimos el tamaño de fuente */
+    font-size: 20px;
 }
 
 .texto p {
     align-items: center;
-    padding: 10px;  /* Reducimos el padding */
+    padding: 10px;
     color: white;
     font-size: 0px;
     font-weight: 300;
 }
 
 .imagenes .texto {
-    height: 50px;  /* Reducimos la altura inicial del texto */
+    height: 50px;
     transition: 1s;
 }
 
 .imagenes:hover .texto {
     transition: height 1s, transform 1s, background-color 1s;
-    transform: translateY(-50px);  /* Ajustamos la transformación */
-    height: 150px;  /* Ajustamos la altura en el hover */
+    transform: translateY(-50px);
+    height: 150px;
     background-color: rgba(63, 106, 138, 0.71);
 }
 
 .imagenes:hover .texto p {
     transition: font-size 0s .2s linear;
-    font-size: 16px;  /* Ajustamos el tamaño de fuente */
+    font-size: 16px;
     font-weight: 300;
     text-shadow: 0px 0px 10px #000000;
 }
@@ -217,7 +220,7 @@ body {
 }
 
 .puntos p {
-    font-size: 20px;  /* Reducimos el tamaño de fuente */
+    font-size: 20px;
     font-weight: 500;
     margin-top: 0px;
     color: white;
@@ -225,7 +228,7 @@ body {
 
 .puntos .bold {
     font-weight: 700;
-    margin-left: 5px;  /* Reducimos el margen */
-    margin-right: 5px;  /* Reducimos el margen */
+    margin-left: 5px;
+    margin-right: 5px;
     color: #5E17EB;
 }
