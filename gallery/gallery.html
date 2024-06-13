@@ -10,6 +10,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/stylesGalery.css">
+    <link rel="stylesheet" href="../css/style.css">
     <script src="../services/shadowDOM.js"></script>
     <script src="../services/template.js"></script>
     <script src="../home/header-element.js"></script>
@@ -21,197 +22,210 @@
     <script src="showDom.js"></script>
     <script type="module" src="import.js"></script>
 
-
-    <style>
-        .content {
-            padding-bottom: .75rem;
-            padding-top: .75rem;
-        }
-  
-    
-  </style>
-
 </head>
+<style>
+    body {
+        padding: 20px;
+        margin: 0;
+        box-sizing: border-box;
+    }
+</style>
 
 <body>
 
-    <!-- Encabezado -->
     <div class="content">
-        <header-element logo-text="PhotoFolio" background-color="#000000" link1-text="Home"
-            link1-href="../home/home.html" link2-text="Services" link2-href="../Services/services.html"
-            link3-text="About" link3-href="../about/about.html" link4-text="Gallery"
-            link4-href="../Gallery/Gallery.html" icon1-class="fab fa-facebook-f" icon1-href="https://facebook.com"
+
+        <!-- Encabezado Shadow DOM-->
+        <header-element logo-text="PhotoFolio" background-color="#000000" link1-text="Inicio"
+            link1-href="../home/home.html" link2-text="Servicios" link2-href="../Services/services.html"
+            link3-text="Nosotros" link3-href="../about/about.html" link4-text="Galería"
+            link4-href="../gallery/gallery.html" icon1-class="fab fa-facebook-f" icon1-href="https://facebook.com"
             icon2-class="fab fa-twitter" icon2-href="https://twitter.com" icon3-class="fab fa-instagram"
             icon3-href="https://instagram.com" icon4-class="fab fa-linkedin-in" icon4-href="https://linkedin.com">
         </header-element>
-    </div>
+        <!-------------------------------------------------------------- -->
 
-      <!--CUSTOM ELEMENT-->
-    <custom-element> </custom-element>
-    <!--ES MODULE-->
+        <!--CUSTOM ELEMENT-->
+        <custom-element> </custom-element>
+        <!--ES MODULE-->
         <image-carousel>
-            <img src="Imagen1.jpg" alt="Image 1">
-            <img src="Imagen2.jpg" alt="Image 2">
-            <img src="Imagen3.jpg" alt="Image 3">
-          </image-carousel>
-   <!--TEMPLATE-->
-    <template id="portfolioDetailsTemplate">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-        <style>
-            .container {
-                display: flex;
-                justify-content: space-between;
-                padding: 20px;
-                background-color: #000;
+            <img src="Imagen1.jpg" alt="Image 1" width="1100" height="400">
+            <img src="Imagen2.jpg" alt="Image 2" width="1100" height="400">
+            <img src="Imagen3.jpg" alt="Image 3" width="1100" height="400">
+        </image-carousel>
+        <!--TEMPLATE-->
+        <br>
+        <br>
+        <template id="portfolioDetailsTemplate">
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+                integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+                crossorigin="anonymous">
+            <style>
+                .container {
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: space-between;
+                    padding: 20px;
+                    background-color: #1e1e1e;
+                    border-radius: 10px;
+                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+                    margin-bottom: 20px;
+                    font-family: 'Poppins', sans-serif;
+                }
 
-                border-radius: 5px;
-                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-                margin-bottom: 20px;
-            }
+                .portfolio-details {
+                    flex: 0 1 60%;
+                    margin-right: 20px;
+                }
 
-            .portfolio-details h1 {
-                font-size: 2.5em;
-                color: #fff;
-                margin-bottom: 10px;
-            }
+                .portfolio-details h1 {
+                    font-size: 2.5em;
+                    color: #27a776;
+                    margin-bottom: 10px;
+                }
 
-            .portfolio-details p {
-                color: #fff;
-                font-size: 1.2em;
-            }
+                .portfolio-details p {
+                    font-size: 1.1em;
+                    line-height: 1.6;
+                }
 
-            .testimonial {
-                margin-top: 20px;
-                padding: 10px;
-                background-color: #fff;
-                border-radius: 5px;
-            }
+                .project-information {
+                    flex: 0 1 35%;
+                    padding: 20px;
+                    background-color: #2c2c2c;
+                    border-radius: 10px;
+                    text-align: center;
+                }
 
-            .testimonial .quote {
-                font-style: italic;
-                color: #888;
-            }
+                .project-information h2 {
+                    font-size: 1.8em;
+                    margin-bottom: 15px;
+                }
 
-            .testimonial .author {
-                display: flex;
-                align-items: center;
-                margin-top: 10px;
-            }
+                .project-information ul {
+                    list-style: none;
+                    padding: 0;
+                }
 
-            .testimonial .author img {
-                width: 40px;
-                height: 40px;
-                border-radius: 50%;
-                margin-right: 10px;
-            }
+                .project-information ul li {
+                    font-size: 1em;
+                    margin-bottom: 10px;
+                }
 
-            .testimonial .author h4 {
-                font-size: 18px;
-                color: #333;
-                margin: 0;
-            }
+                .project-information a.button {
+                    display: inline-block;
+                    padding: 10px 20px;
+                    background-color: #27a776;
+                    color: #fff;
+                    text-decoration: none;
+                    border-radius: 5px;
+                    transition: background-color 0.3s;
+                }
 
-            .testimonial .author p {
-                color: #666;
-                margin: 0;
-            }
+                .project-information a.button:hover {
+                    background-color: #42ca96;
+                }
+            </style>
+            <div class="container">
+                <div class="row">
+                    <div class="col-8">
 
-            .project-information {
-               
-                padding: 10px;
-                background-color: #fff;
-                border-radius: 5px;
-                margin-left: 20px;
-                margin-right: 20px;
-                margin-top: 10px;
-                margin-bottom: 10px;
-                text-align: center;
-                
-              
-            }
-
-            .project-information h2 {
-                font-size: 20px;
-                color: #333;
-                margin-bottom: 10px;
-                text-align: center;
-            }
-
-            .project-information ul {
-                padding-left: 20px;
-                color: #000000;
-            }
-
-            .project-information a.button {
-                display: inline-block;
-                padding: 10px 20px;
-                background-color: #3bbd74;
-                color: #fff;
-                text-decoration: none;
-                border-radius: 5px;
-                margin-top: 10px;
-            }
-            .project-information a.button:hover {
-                background-color: #0056b3;
-            }
-        </style>
-        <div class="container">
-            <div class="row">
-                <div class="col-8">
-
-                    <div class="portfolio-details">
-                        <h1>Detalle</h1>
-                        <p>La fotografía es mucho más que la simple captura de imágenes; es una poderosa forma de
-                            expresión artística que nos permite explorar el mundo que nos rodea de manera única. A
-                            través del lente de una cámara, los fotógrafos pueden revelar la belleza oculta en los
-                            momentos cotidianos, transmitir emociones profundas y contar historias que trascienden las
-                            barreras del tiempo y el espacio.</p>
-                        <p>En nuestra era digital, la fotografía se ha convertido en un medio omnipresente que nos
-                            conecta con el mundo de una manera íntima y significativa. Ya sea documentando momentos
-                            importantes en nuestras vidas, capturando la majestuosidad de la naturaleza o explorando los
-                            rincones más remotos del planeta, cada imagen cuenta una historia única y nos invita a
-                            reflexionar sobre nuestro lugar en el universo.</p>
+                        <div class="portfolio-details">
+                            <h1><center>Detalles</center></h1>
+                            <p>La fotografía es mucho más que la simple captura de imágenes; es una poderosa forma de
+                                expresión artística que nos permite explorar el mundo que nos rodea de manera única. A
+                                través del lente de una cámara, los fotógrafos pueden revelar la belleza oculta en los
+                                momentos cotidianos, transmitir emociones profundas y contar historias que trascienden
+                                las
+                                barreras del tiempo y el espacio.</p>
+                            <p>En nuestra era digital, la fotografía se ha convertido en un medio omnipresente que nos
+                                conecta con el mundo de una manera íntima y significativa. Ya sea documentando momentos
+                                importantes en nuestras vidas, capturando la majestuosidad de la naturaleza o explorando
+                                los
+                                rincones más remotos del planeta, cada imagen cuenta una historia única y nos invita a
+                                reflexionar sobre nuestro lugar en el universo.</p>
+                        </div>
                     </div>
-                </div>
 
-                <div class="col-4">
-                    <div class="project-information">
-                        <h2><strong>Información del proyecto </strong></h2>
-                        <ul>
-                            <strong>Categoría:</strong> Diseño web <br>
-                            <strong>Cliente:</strong> Compañía ASU <br>
-                            <strong>Fecha del proyecto:</strong> 13 de Junio,2024 <br>
-                        </ul>
-                        <a href="#" class="button">Visitar Sitio</a>
+                    <div class="col-4">
+                        <br><br><br>
+                        <div class="project-information">
+                            <h2><strong>Información del proyecto </strong></h2>
+                            <ul>
+                                <strong>Categoría:</strong> Diseño web <br>
+                                <strong>Cliente:</strong> Compañía ASU <br>
+                                <strong>Fecha del proyecto:</strong> 13 de Junio,2024 <br>
+                            </ul>
+                            <a href="#" class="button">Visitar Sitio</a>
+                        </div>
+
                     </div>
 
                 </div>
-
             </div>
-        </div>
+
+        </template>
 
 
-    </template>
-    <template-section> </template-section>
+        <template-section> </template-section>
 
-  <!--SHADOW DOM-->
-    <section >
-        <testimonial-section 
-        quote="El diseño no es solo cómo se ve y se siente,
+        <!--SHADOW DOM-->
+        <section>
+            <testimonial-section quote="El diseño no es solo cómo se ve y se siente,
         es cómo funciona, cómo nos envuelve y entiende.
         Es la fusión perfecta de estética y utilidad,
-        resolviendo problemas, mejorando la realidad."
-        image="Imagen4.jpg" 
-        name="Steve Jobs" 
-        title="Designer">
-      </testimonial-section>
-    </section>
+        resolviendo problemas, mejorando la realidad." image="Imagen4.jpg" name="Steve Jobs" title="Designer">
+            </testimonial-section>
+        </section>
+    </div>
 
-    <footer-element footer-text="PhotoFolio" icon1-class="fab fa-facebook-f" icon1-href="https://facebook.com"
-        icon2-class="fab fa-twitter" icon2-href="https://twitter.com" icon3-class="fab fa-instagram"
-        icon3-href="https://instagram.com" icon4-class="fab fa-linkedin-in" icon4-href="https://linkedin.com">
-    </footer-element>
+    <!-- Footer Template -->
+    <template id="footer-template">
+        <style>
+            @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css');
+
+            .footer {
+                background-color: #000;
+                color: #fff;
+                padding: 20px 0;
+                text-align: center;
+            }
+
+            .footer a {
+                color: #28a745;
+                text-decoration: none;
+            }
+
+            .footer .social-icons a {
+                margin: 0 10px;
+                color: #fff;
+                font-size: 1.5rem;
+            }
+
+            .footer .social-icons a:hover {
+                color: #27a776;
+            }
+        </style>
+        <footer class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <hr>
+                        <p>&copy; Copyright <span id="footer-text"></span> Todos los derechos son Reservados</p>
+                    </div>
+                    <div class="col-12">
+                        <div class="social-icons">
+                            <a id="icon1" href="#"><i class="fab fa-facebook"></i></a>
+                            <a id="icon2" href="#"><i class="fab fa-twitter"></i></a>
+                            <a id="icon3" href="#"><i class="fab fa-instagram"></i></a>
+                            <a id="icon4" href="#"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </template>
+    <footer-container></footer-container>
 </body>
 
 </html>

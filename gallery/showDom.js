@@ -27,9 +27,10 @@ class TestimonialSection extends HTMLElement {
         this.shadowDOM.innerHTML = `
         <style>
           :host {
-            font-family: Arial, sans-serif;
             display: block;
-             text-align: center;
+            padding: 2rem; /* Añade espacio alrededor del componente */
+            box-sizing: border-box;
+            text-align: center;
           }
           .testimonial {
             padding: 1rem;
