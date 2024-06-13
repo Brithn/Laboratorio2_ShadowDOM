@@ -25,3 +25,5 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+import { actualizarImagen, posicionCarrusel } from './script.js';
+
