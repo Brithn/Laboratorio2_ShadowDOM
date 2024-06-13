@@ -20,7 +20,7 @@
     <script src="template.js"></script>
     <script src="showDom.js"></script>
 
-    <script type="module" src="main.js"></script>
+    
 
     <dark-mode-toggle></dark-mode-toggle>
 
@@ -30,7 +30,10 @@
             padding-bottom: .75rem;
             padding-top: .75rem;
         }
-    </style>
+  
+    
+  </style>
+
 </head>
 
 <body>
@@ -49,9 +52,17 @@
       <!--CUSTOM ELEMENT-->
     <custom-element> </custom-element>
 
-      <!--ES MODULE-->
-    <image-carousel></image-carousel>
-
+    <!--ES MODULE-->
+  
+        <image-carousel>
+            <img src="Imagen1.jpg" alt="Image 1">
+            <img src="Imagen2.jpg" alt="Image 2">
+            <img src="Imagen3.jpg" alt="Image 3">
+            <img src="Imagen4.jpg" alt="Image 3">
+          </image-carousel>
+        
+   
+      
 
 
    <!--TEMPLATE-->
@@ -191,7 +202,7 @@
                             <li><strong>Project Date:</strong> 01 March, 2020</li>
                             <li><strong>Project URL:</strong> <a href="http://www.example.com">www.example.com</a></li>
                         </ul>
-                        <a href="http://www.example.com" class="button">Visit Website</a>
+                        <a href="#" class="button">Visit Website</a>
                     </div>
 
                 </div>
@@ -204,10 +215,15 @@
     <template-section> </template-section>
 
   <!--SHADOW DOM-->
-    <section class="gallery">
-        <testimonial-section quote="Export tempor illum tamen malis malis eram quae irure esse labore..."
-            image="Imagen4.jpg" name="Sara Wilsson" title="Designer">
-        </testimonial-section>
+    <section >
+
+        <testimonial-section 
+        quote="Export tempor illum tamen malis malis eram quae irure esse labore..."
+        image="Imagen4.jpg" 
+        name="Sara Wilsson" 
+        title="Designer">
+      </testimonial-section>
+
     </section>
 
 
@@ -217,6 +233,11 @@
         icon3-href="https://instagram.com" icon4-class="fab fa-linkedin-in" icon4-href="https://linkedin.com">
     </footer-element>
 
+
+
+
+
+    <script type="module" src="import.js"></script>
 
 </body>
 
