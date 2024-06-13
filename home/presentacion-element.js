@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         render() {
-            this.innerHTML = `1
+            this.innerHTML = `
                 ${this.templateCss()}
                 ${this.template()}
             `;

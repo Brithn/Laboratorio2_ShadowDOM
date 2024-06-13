@@ -5,3 +5,8 @@ body {
     background-color: #000000;
     color: #000000;
 }
+.content {
+    padding-bottom: .75rem;
+    padding-top: .75rem;
+    background-color: black;
+  }
