@@ -19,7 +19,6 @@
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script type="module" src="../services/ESModules.js"></script>
     <script src="../home/presentacion-element.js"></script>
-
     <script src="../about/template.js" defer></script>
 
 
@@ -27,7 +26,6 @@
 </head>
 
 <body>
-    <!-- botón de subida  -->
     <template id="scrollTopBtn">
         <style>
             :host {
@@ -70,6 +68,7 @@
             <img src="../img/arrow2.svg" alt="up">
         </div>
     </template>
+    
     <scroll-top-button></scroll-top-button>
     <!----------------------------------------------------->
 
@@ -82,12 +81,21 @@
             icon3-href="https://instagram.com" icon4-class="fab fa-linkedin-in" icon4-href="https://linkedin.com">
         </header-element>
     </div>
+    
+    <!----------------------------------------------------->
+
+    <dark-mode-toggle></dark-mode-toggle>
+    
+    <!----------------------------------------------------->
 
     <div class="container">
         <my-service-box title="Servicios"
             description="Nuestro estudio fotográfico lleva más de 20 años ofreciendo los mejores servicios de fotografía, ofreciendo distintos planes y servicio de fotógrafos alrededor del mundo."
             button-text="Contrátanos" button-link="services.html"></my-service-box>
     </div>
+    
+    <!----------------------------------------------------->
+
 
     <template id="my-card-template">
         <style>

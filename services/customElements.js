@@ -1,7 +1,6 @@
 class MyServiceBox extends HTMLElement {
     constructor() {
         super();
-        this.attachShadow({ mode: 'open' });
     }
 
     static get observedAttributes() {
@@ -38,7 +37,7 @@ class MyServiceBox extends HTMLElement {
     }
 
     animateElements() {
-        const elements = this.shadowRoot.querySelectorAll('.custom-box, .custom-title, .custom-paragraph, .cta-btn');
+        const elements = this.querySelectorAll('.custom-box, .custom-title, .custom-paragraph, .cta-btn');
         elements.forEach((el) => {
             el.classList.add('animate');
         });
@@ -49,7 +48,7 @@ class MyServiceBox extends HTMLElement {
     }
 
     render() {
-        this.shadowRoot.innerHTML = `
+        this.innerHTML = `
             ${this.templateCss()}
             ${this.template()}
         `;
