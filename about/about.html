@@ -37,8 +37,8 @@
 </head>
 
 <body>
-  <dark-mode-toggle></dark-mode-toggle>
 
+  <!-- botón de subida  -->
   <template id="scrollTopBtn">
     <style>
       :host {
@@ -81,8 +81,8 @@
       <img src="../img/arrow2.svg" alt="up">
     </div>
   </template>
-
   <scroll-top-button></scroll-top-button>
+  <!----------------------------------------------------->
 
 
   <div class="content">
@@ -98,7 +98,8 @@
       <div class="col-6  mx-auto">
         <presentation-element heading-text="Sobre Nosotros"
           description-text="Nuestra filosofía se basa en la creatividad, la profesionalidad y el compromiso con la excelencia. 
-                Utilizamos las últimas tecnologías y técnicas innovadoras para garantizar que cada imagen sea perfecta en todos los aspectos.">
+                Utilizamos las últimas tecnologías y técnicas innovadoras para garantizar que cada imagen sea perfecta en todos los aspectos."
+                button-text="Contáctanos" button-href="#footer">
         </presentation-element>
       </div>
     </section>
@@ -129,7 +130,7 @@
   <custom-section-title heading="Testimonios" subheading="Lo que están diciendo!">
   </custom-section-title>
 
-       
+
 
   <testimonial-carousel>
     <testimonial-item img="../img/brithney.png" name="Brithney Salazar" title="Especialista en Marketing"
@@ -193,7 +194,7 @@
       </div>
     </footer>
   </template>
-  <footer-container></footer-container>
+  <footer-container id="footer"></footer-container>
 
 
 
