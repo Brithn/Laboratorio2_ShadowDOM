@@ -16,11 +16,15 @@
     <script src="../home/header-element.js"></script>
     <script src="../home/presentacion-element.js"></script>
     <script src="../home/footer.js"></script>
+    <script src="../about/template.js" ></script>
+
     <script src="customElement.js"></script>
     <script src="carousel.js"></script>
     <script src="template.js"></script>
     <script src="showDom.js"></script>
     <script type="module" src="import.js"></script>
+
+
 
 </head>
 <style>
@@ -28,6 +32,51 @@
 </style>
 
 <body>
+
+      <!-- botón de subida -->
+  <template id="scrollTopBtn">
+    <style>
+      :host {
+        --btn-size: 50px;
+        --btn-color: #27a776;
+        --btn-position: 20px;
+
+      }
+
+      .scroll-top {
+        position: fixed;
+        bottom: var(--btn-position);
+        right: var(--btn-position);
+        width: var(--btn-size);
+        height: var(--btn-size);
+        background-color: var(--btn-color);
+        border-radius: 50%;
+        display: none;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        z-index: 9999;
+        transition: background-color 0.3s ease;
+      }
+
+      .scroll-top.active {
+        display: flex;
+      }
+
+      .scroll-top img {
+        width: 40%;
+        height: 40%;
+      }
+
+      .scroll-top:hover {
+        background-color: #1b7a5c;
+      }
+    </style>
+    <div class="scroll-top">
+      <img src="../img/arrow2.svg" alt="up">
+    </div>
+  </template>
+  <scroll-top-button></scroll-top-button>
 
     <div class="content">
 
@@ -172,7 +221,7 @@
             <testimonial-section quote="El diseño no es solo cómo se ve y se siente,
         es cómo funciona, cómo nos envuelve y entiende.
         Es la fusión perfecta de estética y utilidad,
-        resolviendo problemas, mejorando la realidad." image="../img/Imagen4.jpg" name="Steve Jobs" title="Designer">
+        resolviendo problemas, mejorando la realidad." image="../img/Imagen4.jpg" name="Steve Jobs" title="Diseñador">
             </testimonial-section>
         </section>
     </div>

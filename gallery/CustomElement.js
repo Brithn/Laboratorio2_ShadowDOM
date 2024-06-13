@@ -1,7 +1,8 @@
 class CustomElement extends HTMLElement {
-  connectedCallback() {
-      this.innerHTML = `
+    connectedCallback() {
+        this.innerHTML = `
           <section class="hero">
+          <div class="col-6  mx-auto">
               <h1>Galería</h1>
               <p>
                  En una galería bulliciosa, el arte y la vida se entrelazan en una danza de colores y formas.
@@ -11,12 +12,13 @@ class CustomElement extends HTMLElement {
                   los espectadores perderse en un mundo de creatividad infinita. En cada esquina,
                   una nueva sorpresa aguarda, transformando la experiencia en un viaje inolvidable.
               </p>
+            </div>
           </section>
           <section class="breadcrumb">
-              <p>Inicio / Información fotográfica</p>
-          </section>
+              <p>Inicio / Galería</p>
+          </section>   
       `;
-  }
+    }
 }
 
 customElements.define('custom-element', CustomElement);

@@ -31,6 +31,8 @@ class TestimonialSection extends HTMLElement {
             padding: 2rem; /* Añade espacio alrededor del componente */
             box-sizing: border-box;
             text-align: center;
+            justify-content: center;
+            align-items: center;
           }
           .testimonial {
             padding: 1rem;
@@ -39,8 +41,10 @@ class TestimonialSection extends HTMLElement {
             background-color: #f9f9f9;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
             transition: box-shadow 0.3s ease; /* Transición suave */
-             text-align: center;
-            }
+            text-align: center;
+            max-width: 70%; /* Ajusta el ancho máximo */
+            margin: 0 auto; /* Centra el elemento */
+          }
 
             .testimonial img {
             width: 60px; /* Ajusta el tamaño de la imagen según sea necesario */
@@ -51,7 +55,7 @@ class TestimonialSection extends HTMLElement {
           .quote {
             font-size: 1.2rem;
             margin-bottom: 1rem;
-            color: #333;
+            color: #000;
           }
           .author {
             display: flex;
@@ -67,11 +71,11 @@ class TestimonialSection extends HTMLElement {
           .author-info h4 {
             margin: 0;
             font-size: 1rem;
-            color: #555;
+            color: #000;
           }
           .author-info p {
             margin: 0;
-            color: #777;
+            color: #000;
           }
         </style>
         <section class="testimonial">

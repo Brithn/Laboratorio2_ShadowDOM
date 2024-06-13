@@ -8,7 +8,7 @@
 
 
   <script src="customElements.js"></script>
-  <script src="template.js" defer></script>
+  <script src="template.js" ></script>
   <script src="import.js" type="module"></script>
   <link rel="stylesheet" href="style.css">
 
@@ -38,7 +38,7 @@
 
 <body>
 
-  <!-- botón de subida  -->
+  <!-- botón de subida   TEMPLATE-->
   <template id="scrollTopBtn">
     <style>
       :host {
@@ -96,7 +96,7 @@
 
     <section>
       <div class="col-6  mx-auto">
-        <presentation-element heading-text="Sobre Nosotros"
+        <presentation-element heading-text="Sobre Nosotros" subheading-text="Conócenos"
           description-text="Nuestra filosofía se basa en la creatividad, la profesionalidad y el compromiso con la excelencia. 
                 Utilizamos las últimas tecnologías y técnicas innovadoras para garantizar que cada imagen sea perfecta en todos los aspectos." button-text="Contáctanos"
           button-href="#footer">
@@ -106,17 +106,16 @@
   </div>
 
 
-
+ <!--ES MODULE-->
   <breadcrumb-nav separator="/">
-
     <li><a href="../home/home.html">Inicio</a></li>
-    <li>Sobre Nosotros</li>
+    <li >Sobre Nosotros</li>
   </breadcrumb-nav>
 
 
 
 
-
+ <!-- SHADOW DOM-->
   <about-section image="../img/img.jpg" heading="Fotógrafa Profesional" birthday="15/08/1987" website="www.emilyjoh.com"
     phone="+15551234567" city="New York" age="30" degree="Licenciada" email="info@emilyjohnson.com"
     freelance="Disponible"
@@ -127,11 +126,11 @@
   </about-section>
 
 
-  <custom-section-title heading="Testimonios" subheading="Lo que están diciendo!">
-  </custom-section-title>
+   <!-- CUSTOM ELEMENTS , shadow dom-->
+  <custom-section-title heading="Testimonios" subheading="Lo que están diciendo!"> </custom-section-title>
 
 
-
+ <!-- CUSTOM ELEMENTS-->
   <testimonial-carousel>
     <testimonial-item img="../img/brithney.png" name="Brithney Salazar" title="Especialista en Marketing"
       text="“ Emily realmente capturó la esencia de nuestra familia en cada foto. Estamos absolutamente enamorados de su trabajo y no podemos esperar para trabajar con ella nuevamente en el futuro. ”">
@@ -146,6 +145,7 @@
       text="“ ¡Increíble experiencia con Emily! Sus habilidades para capturar momentos son excepcionales. ¡Estamos encantados con nuestras fotos de boda y no podríamos haber pedido un mejor fotógrafo! ”">
     </testimonial-item>
   </testimonial-carousel>
+
 
 
 

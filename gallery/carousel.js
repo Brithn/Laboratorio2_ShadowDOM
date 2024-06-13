@@ -29,6 +29,7 @@ export class Carousel extends HTMLElement {
           width: ${this.slideWidth}px;
           height: ${this.imageHeight}px;
           margin: 0 auto;
+          padding: 30px;
         }
         .carousel-slide {
           display: flex;

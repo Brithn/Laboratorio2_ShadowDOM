@@ -79,13 +79,15 @@ class BreadcrumbNav extends HTMLElement {
             color: #0de592;
         }
         .breadcrumb-item.active a {
-            color: black;
+            color: green;
             pointer-events: none;
             cursor: default;
         }
         .breadcrumb li:last-child:not(:has(a)) {
             color: #ffffff;
         }
+
+      
         
            
           </style>
