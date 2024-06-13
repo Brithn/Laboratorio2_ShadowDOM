@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
     style.textContent = `
         body {
             margin: 0;
-            font-family: serif;
+            font-family: 'Poppins', sans-serif;
             background-color: #000000;
             color: #ffffff;
             transition: background-color 0.3s, color 0.3s;

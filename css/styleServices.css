@@ -31,7 +31,7 @@ h3{
     font-size: 36px;
     margin-bottom: 20px;
     color: #ffffff;
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 .pricing-container {
@@ -53,7 +53,7 @@ h3{
     margin: 10px;
     text-align: center;
     transition: transform 0.3s ease;
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 .pricing-card:hover {
@@ -100,7 +100,7 @@ h3{
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
 
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
 }
