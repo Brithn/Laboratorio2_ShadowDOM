@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         align-items: center;
                         padding: 10px 20px;
                         background-color: ${this.getAttribute('background-color') || '#000000'};
-                        family: 'Poppins', sans-serif;
+                        font-family: 'Poppins', sans-serif;
                     }
                     .logo {
                         font-size: 1.5em;

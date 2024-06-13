@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sobre Nosotros</title>
+  <title>Nosotros</title>
 
 
   <script src="customElements.js"></script>
@@ -33,14 +33,6 @@
   <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
   <link rel="stylesheet" href="styleCarru.css">
-
-  <style>
-    .content {
-      padding-bottom: .75rem;
-      padding-top: .75rem;
-      background-color: black;
-    }
-  </style>
 
 </head>
 
@@ -134,16 +126,10 @@
   </about-section>
 
 
-
-
-
-
-
   <custom-section-title heading="Testimonios" subheading="Lo que están diciendo!">
   </custom-section-title>
 
-
-
+       
 
   <testimonial-carousel>
     <testimonial-item img="../img/brithney.png" name="Brithney Salazar" title="Especialista en Marketing"
@@ -162,10 +148,52 @@
 
 
 
-  <footer-element footer-text="   PhotoFolio   " icon1-class="fab fa-facebook-f" icon1-href="https://facebook.com"
-    icon2-class="fab fa-twitter" icon2-href="https://twitter.com" icon3-class="fab fa-instagram"
-    icon3-href="https://instagram.com" icon4-class="fab fa-linkedin-in" icon4-href="https://linkedin.com">
-  </footer-element>
+  <template id="footer-template">
+    <style>
+      @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css');
+
+      .footer {
+        background-color: #000;
+        color: #fff;
+        padding: 20px 0;
+        text-align: center;
+      }
+
+      .footer a {
+        color: #28a745;
+        text-decoration: none;
+      }
+
+      .footer .social-icons a {
+        margin: 0 10px;
+        color: #fff;
+        font-size: 1.5rem;
+      }
+
+      .footer .social-icons a:hover {
+        color: #27a776;
+      }
+    </style>
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <hr>
+            <p>&copy; Copyright <span id="footer-text"></span> Todos los derechos son Reservados</p>
+          </div>
+          <div class="col-12">
+            <div class="social-icons">
+              <a id="icon1" href="#"><i class="fab fa-facebook"></i></a>
+              <a id="icon2" href="#"><i class="fab fa-twitter"></i></a>
+              <a id="icon3" href="#"><i class="fab fa-instagram"></i></a>
+              <a id="icon4" href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </template>
+  <footer-container></footer-container>
 
 
 

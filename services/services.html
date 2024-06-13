@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Servicios</title>
     <script src="../home/header-element.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
@@ -27,49 +27,52 @@
 </head>
 
 <body>
-
+    <!-- botón de subida  -->
     <template id="scrollTopBtn">
         <style>
-          :host {
-            --btn-size: 50px;
-            --btn-color: #27a776;
-            --btn-position: 20px;
-              
-          }
-          .scroll-top {
-            position: fixed;
-            bottom: var(--btn-position);
-            right: var(--btn-position);
-            width: var(--btn-size);
-            height: var(--btn-size);
-            background-color: var(--btn-color);
-            border-radius: 50%;
-            display: none;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-            z-index: 9999;
-            transition: background-color 0.3s ease;
-          }
-          .scroll-top.active {
-            display: flex;
-          }
-          .scroll-top img {
-            width: 40%;
-            height: 40%;
-          }
-      .scroll-top:hover {
-        background-color: #1b7a5c;
-      }
-        
+            :host {
+                --btn-size: 50px;
+                --btn-color: #27a776;
+                --btn-position: 20px;
+
+            }
+
+            .scroll-top {
+                position: fixed;
+                bottom: var(--btn-position);
+                right: var(--btn-position);
+                width: var(--btn-size);
+                height: var(--btn-size);
+                background-color: var(--btn-color);
+                border-radius: 50%;
+                display: none;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                z-index: 9999;
+                transition: background-color 0.3s ease;
+            }
+
+            .scroll-top.active {
+                display: flex;
+            }
+
+            .scroll-top img {
+                width: 40%;
+                height: 40%;
+            }
+
+            .scroll-top:hover {
+                background-color: #1b7a5c;
+            }
         </style>
         <div class="scroll-top">
-          <img src="../img/arrow2.svg" alt="up">
+            <img src="../img/arrow2.svg" alt="up">
         </div>
-      </template>
-    
-      <scroll-top-button></scroll-top-button>
-    
+    </template>
+    <scroll-top-button></scroll-top-button>
+    <!----------------------------------------------------->
+
     <div class="content">
         <header-element logo-text="PhotoFolio" background-color="#000000" link1-text="Inicio"
             link1-href="../home/home.html" link2-text="Servicios" link2-href="../Services/services.html"
@@ -79,7 +82,6 @@
             icon3-href="https://instagram.com" icon4-class="fab fa-linkedin-in" icon4-href="https://linkedin.com">
         </header-element>
     </div>
-    <dark-mode-toggle></dark-mode-toggle>
 
     <div class="container">
         <my-service-box title="Servicios"
@@ -101,6 +103,7 @@
                 margin: 10px;
                 animation: fadeInUp 0.6s ease-out;
             }
+
             .card h2 {
                 font-size: 1.5em;
                 margin-bottom: 10px;
@@ -110,6 +113,7 @@
                 color: #27a776;
                 transition: color 0.3s ease;
             }
+
             .card p {
                 font-size: 1em;
                 color: #ffffff;
@@ -117,6 +121,7 @@
                 margin-bottom: 20px;
                 transition: color 0.3s ease;
             }
+
             .card img {
                 width: 300px;
                 height: 300px;
@@ -124,24 +129,30 @@
                 border-radius: 5px;
                 transition: transform 0.3s ease;
             }
+
             .card:hover {
                 transform: scale(1.05);
                 box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
             }
+
             .card:hover h2 {
                 color: #27a776;
             }
-            .card:hover p{
+
+            .card:hover p {
                 color: #27a776;
             }
+
             .card:hover img {
                 transform: scale(1.1);
             }
+
             @keyframes fadeInUp {
                 from {
                     opacity: 0;
                     transform: translateY(20px);
                 }
+
                 to {
                     opacity: 1;
                     transform: translateY(0);
@@ -157,17 +168,17 @@
 
     <div class="card-container">
         <my-card title="Sesiones Fotográficas"
-        description="Capturamos tus momentos más especiales con sesiones fotográficas profesionales. Perfectas para toda la familia."
-        image="https://i0.wp.com/konicadigitalphotoexpress.com/wp-content/uploads/2023/04/post-sesion-basica.jpg?fit=1080%2C1350&ssl=1"></my-card>
+            description="Capturamos tus momentos más especiales con sesiones fotográficas profesionales. Perfectas para toda la familia."
+            image="https://i0.wp.com/konicadigitalphotoexpress.com/wp-content/uploads/2023/04/post-sesion-basica.jpg?fit=1080%2C1350&ssl=1"></my-card>
         <my-card title="Impresiones Fotográficas"
-        description="Transforma tus recuerdos en impresiones de alta calidad. Ideales para decorar tus espacios favoritos en todo momento."
-        image="https://i0.wp.com/konicadigitalphotoexpress.com/wp-content/uploads/2023/11/impresion-tamano-polaroid-8-8.jpg?fit=1080%2C1080&ssl=1"></my-card>
-         <my-card title="Regalos Personalizados"
-        description="Sorprende a tus seres queridos con regalos personalizados únicos y creativos. Perfectos para cualquier ocasión."
-        image="https://i0.wp.com/konicadigitalphotoexpress.com/wp-content/uploads/2023/05/plato-de-ceramica.jpg?fit=1080%2C1080&ssl=1"></my-card>
+            description="Transforma tus recuerdos en impresiones de alta calidad. Ideales para decorar tus espacios favoritos en todo momento."
+            image="https://i0.wp.com/konicadigitalphotoexpress.com/wp-content/uploads/2023/11/impresion-tamano-polaroid-8-8.jpg?fit=1080%2C1080&ssl=1"></my-card>
+        <my-card title="Regalos Personalizados"
+            description="Sorprende a tus seres queridos con regalos personalizados únicos y creativos. Perfectos para cualquier ocasión."
+            image="https://i0.wp.com/konicadigitalphotoexpress.com/wp-content/uploads/2023/05/plato-de-ceramica.jpg?fit=1080%2C1080&ssl=1"></my-card>
         <my-card title="Fotografía Aérea y Video Drone"
-        description="Descubre nuevas perspectivas con nuestras fotografías aéreas y videos drone. Ideal para eventos y promociones."
-        image="https://adronespace.es/wp-content/uploads/2023/11/Fotografia-aerea-y-video-con-drones.jpg"></my-card>
+            description="Descubre nuevas perspectivas con nuestras fotografías aéreas y videos drone. Ideal para eventos y promociones."
+            image="https://adronespace.es/wp-content/uploads/2023/11/Fotografia-aerea-y-video-con-drones.jpg"></my-card>
     </div>
 
     <div class="pricing-section">
@@ -224,12 +235,14 @@
 
             <div class="imagenes">
                 <div id="img">
-                    <img class="img" src="https://static-cse.canva.com/blob/984400/Planosfotograficos.08c8c0db.avif" alt="imagen 1" loading="lazy">
+                    <img class="img" src="https://static-cse.canva.com/blob/984400/Planosfotograficos.08c8c0db.avif"
+                        alt="imagen 1" loading="lazy">
                 </div>
-                
+
                 <div id="texto" class="texto">
                     <h3>La Belleza de lo Cotidiano</h3>
-                    <p>'La fotografía es el arte de congelar el tiempo, capturando la esencia de un momento en una imagen.'</p>
+                    <p>'La fotografía es el arte de congelar el tiempo, capturando la esencia de un momento en una
+                        imagen.'</p>
                 </div>
             </div>
 
@@ -240,11 +253,53 @@
 
         <div class="puntos" id="puntos"></div>
     </div>
+    
+    <template id="footer-template">
+        <style>
+            @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css');
 
-    <footer-element footer-text="   PhotoFolio   " icon1-class="fab fa-facebook-f" icon1-href="https://facebook.com"
-        icon2-class="fab fa-twitter" icon2-href="https://twitter.com" icon3-class="fab fa-instagram"
-        icon3-href="https://instagram.com" icon4-class="fab fa-linkedin-in" icon4-href="https://linkedin.com">
-    </footer-element>
+            .footer {
+                background-color: #000;
+                color: #fff;
+                padding: 20px 0;
+                text-align: center;
+            }
+
+            .footer a {
+                color: #28a745;
+                text-decoration: none;
+            }
+
+            .footer .social-icons a {
+                margin: 0 10px;
+                color: #fff;
+                font-size: 1.5rem;
+            }
+
+            .footer .social-icons a:hover {
+                color: #27a776;
+            }
+        </style>
+        <footer class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <hr>
+                        <p>&copy; Copyright <span id="footer-text"></span> Todos los derechos son Reservados</p>
+                    </div>
+                    <div class="col-12">
+                        <div class="social-icons">
+                            <a id="icon1" href="#"><i class="fab fa-facebook"></i></a>
+                            <a id="icon2" href="#"><i class="fab fa-twitter"></i></a>
+                            <a id="icon3" href="#"><i class="fab fa-instagram"></i></a>
+                            <a id="icon4" href="#"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </template>
+    <footer-container></footer-container>
 
 </body>
 
